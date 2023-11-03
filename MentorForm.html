@@ -15,8 +15,9 @@
     <input type="checkbox" id="hybrid" name="hybrid" value="hybrid">
     <label for="hybrid"> Hybrid</label> </span>
     
-    <span><Label>ZIP Code</Label><input type="text" pattern="[0-9]{5}" title="Five digit zip code" /> </span>
+    <span class = "zip"><Label>ZIP Code</Label><input type="text" pattern="[0-9]{5}" title="Five digit zip code" /> </span>
 
+    <Label>What state do you reside in?</Label>
     <select id="country-state" name="country-state">
         <option value="">Select state</option>
         <option value="AL">Alabama</option>
@@ -86,7 +87,111 @@
         <option value="WI">Wisconsin</option>
         <option value="WY">Wyoming</option>
     </select>
-  </form>
+
+    <span><Label>What county do you reside in?</Label>
+    <select id="county-state" name="county-state">
+        <option value="">Select state</option>
+        <option value="AL">County 1</option>
+    </select></span>
+
+    <span><Label>How far are you willing to travel (if in person or hybrid)?</Label>
+    <input type="number"/></span>
+
+    <Label>When are you available to meet with your mentee</Label>
+
+    <Label>What is your primary language?</Label>
+
+    <Label>What languages other than English do you speak fluently?</Label>
+
+    <span><Label>Enter your date of birth</Label>
+    <input type="date" id="start" name="trip-start" value="2018-07-22" max="2018-12-31" /></span>
+
+    <Label>Select your gender</Label>
+
+    <Label>Select your preferred gender for your mentees</Label>
+
+    <Label>Select your race/ ethnicity</Label>
+
+    <Label>Select preferred race/ ethnicity for your mentee</Label>
+
+    <Label>Up to what education level do you feel comfortable supporting a mentee?</Label>
+
+    <Label>Do you have a disability?</Label>
+
+    <Label>Tell us about your disability</Label>
+
+    <Label>Do you want a mentee with a similar disability to yours?</Label>
+
+    <Label>Do you want to elaborate/describe your disability?</Label>
+
+    <Label>Do you identify as a member of the LGBTQIA+ Community?</Label>
+
+    <Label>Do you want an LGBTQIA+ mentee?</Label>
+
+    <Label>Do you want to disclose religion?</Label>
+
+    <Label>Do you want someone with a similar religion to yours? (if previous question was answered)</Label>
+
+    <Label>What age range do you want your mentee to be?</Label>
+
+    <Label>What mentee goals for this mentorship relationship do you feel comfortable supporting?</Label>
+
+    <Label>What are some areas of growth I can support my mentee through (Checkbox same options as mentees)</Label>
+
+    <Label>Select 5 or more hobbies and interests from the following list that appeal to you and you would be willing to share with the mentee (Checkbox)</Label>
+  
+    <Label>Select up to 5 qualities that you feel best describe you (Checkbox same options as mentees)</Label>
+
+    <Label>What is the most important factor for you when it comes to a mentee? (dropdown)</Label>
+
+    <Label>What is the second most important factor for you when it comes to a mentee? (dropdown)
+    </Label>
+
+    <Label>What is the third most important factor for you when it comes to a mentee?
+    </Label>
+
+    <Label>Name </Label>
+    <Label>Address </Label>
+    <Label>Phone </Label>
+    <Label>Email </Label>
+    <Label>Preferred Pronouns (he, she, they, other) </Label>
+    <Label>Gender (man, woman, non-binary)</Label>
+    <Label>Race/Ethnicity (see list from above, click as many as applicable)</Label>
+    <Label>Age</Label>    
+    <Label>Employer (fill in)</Label>      
+    <Label>Are you a student? (Y/N)</Label>    
+    <span><Label>Household income</Label>    
+    <select id="income" name="income">
+        <option value="">Select state</option>
+        <option value="">less than $10,000</option>
+        <option value="">$10,000-$25,000</option>
+        <option value="">$25,000-$50,000</option>
+        <option value="">$50,000-$75,000</option>
+        <option value="">$75,000-$100,000</option>
+        <option value="">$100,000-$125,000</option>
+        <option value="">$125,000-$150,000</option>
+        <option value="">$150,000-above</option>
+        </select>  
+        </span>
+
+    <span><Label>Are you willing to consent to a background check prior to joining any PYD program? (Yes/No)</Label>
+    <br>
+    <input type="radio" id="" name="backgroundcheck" value="HTML">
+    <label for="Yes">Yes</label>
+    <input type="radio" id="" name="backgroundcheck" value="CSS">
+    <label for="No">No</label><br></span>
+
+   <span> <Label>Are you willing to complete an orientation/training on mentoring youth with disabilities (Yes/No)</Label>
+    <br>
+    <input type="radio" id="" name="training" value="HTML">
+    <label for="Yes">Yes</label>
+    <input type="radio" id="" name="training" value="CSS">
+    <label for="No">No</label><br></span>
+    <span><Label>Attach consent form to do background check with digital signature or some other of way to capturing signatures electronically</Label>
+
+    </span>
+
+</form>
 
 </body>
 <style scoped>
@@ -94,7 +199,16 @@
         display:flex;
         flex-direction: column;
         justify-content: space-around;
-        
     }
+
+    Label{
+        margin-top: 1em;
+    }
+
+    span{
+        margin-top:1em;
+    }
+
+
 </style>
 </html>
