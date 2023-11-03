@@ -6,13 +6,13 @@
 <form>
     <span>
     <label for="fname">How do you want your mentoring relationship to primarily take place? (Select all that Apply)</label><br>
-    <input type="checkbox" id="inPerson" name="inPerson" value="inPerson">
+    <input type="checkbox" id="mentoringrelationship" name="inPerson" value="inPerson">
     <label for="inPerson"> In Person</label></span>
     <span>
-    <input type="checkbox" id="virtual" name="virtual" value="Virtual">
+    <input type="checkbox" id="mentoringrelationship" name="virtual" value="Virtual">
     <label for="virtual"> Virtual</label></span>
     <span>
-    <input type="checkbox" id="hybrid" name="hybrid" value="hybrid">
+    <input type="checkbox" id="mentoringrelationship" name="hybrid" value="hybrid">
     <label for="hybrid"> Hybrid</label> </span>
     
     <span class = "zip"><Label>ZIP Code</Label><input type="text" pattern="[0-9]{5}" title="Five digit zip code" /> </span>
@@ -106,9 +106,24 @@
     <span><Label>Enter your date of birth</Label>
     <input type="date" id="start" name="trip-start" value="2018-07-22" max="2018-12-31" /></span>
 
+    <span>
     <Label>Select your gender</Label>
+    <br>
+    <input type="radio" id="yourgender" name="Male" value="Male">
+    <label for="Male">Male</label>
+    <input type="radio" id="" name="Female" value="Female">
+    <label for="No">No</label><br></span>
 
-    <Label>Select your preferred gender for your mentees</Label>
+    <span>
+    <Label>Select your preferred gender for your mentees (Select all that apply)</Label> <br>
+        <input type="checkbox" id="menteegender" name="Male" value="Male">
+        <label for="Male"> Male </label></span>
+        <span>
+        <input type="checkbox" id="menteegender" name="Female" value="Female">
+        <label for="Female"> Female</label></span>
+        <span>
+        <input type="checkbox" id="menteegender" name="Nonbinary" value="Nonbinary">
+        <label for="Nonbinary"> Nonbinary</label> </span>
 
     <Label>Select your race/ ethnicity</Label>
 
