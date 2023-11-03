@@ -15,7 +15,7 @@
     <input type="checkbox" id="mentoringrelationship" name="hybrid" value="hybrid">
     <label for="hybrid"> Hybrid</label> </span>
     
-    <span class = "zip"><Label>ZIP Code</Label><input type="text" pattern="[0-9]{5}" title="Five digit zip code" /> </span>
+    <span ><Label class = "zip">ZIP Code</Label><input type="text" pattern="[0-9]{5}" title="Five digit zip code" /> </span>
 
     <Label>What state do you reside in?</Label>
     <select id="country-state" name="country-state">
@@ -106,13 +106,6 @@
     <span><Label>Enter your date of birth</Label>
     <input type="date" id="start" name="trip-start" value="2018-07-22" max="2018-12-31" /></span>
 
-    <span>
-    <Label>Select your gender</Label>
-    <br>
-    <input type="radio" id="yourgender" name="Male" value="Male">
-    <label for="Male">Male</label>
-    <input type="radio" id="" name="Female" value="Female">
-    <label for="No">No</label><br></span>
 
     <span>
     <Label>Select your preferred gender for your mentees (Select all that apply)</Label> <br>
@@ -139,9 +132,19 @@
 
     <Label>Do you want to elaborate/describe your disability?</Label>
 
-    <Label>Do you identify as a member of the LGBTQIA+ Community?</Label>
+    <span><Label>Do you identify as a member of the LGBTQIA+ Community?</Label>
+    <input type="radio" id="" name="LGBTQIA" value="Yes">
+    <label for="Yes">Yes</label>
+    <input type="radio" id="" name="LGBTQIA" value="No">
+    <label for="No">No</label>
+    </span>
 
-    <Label>Do you want an LGBTQIA+ mentee?</Label>
+    <span><Label>Do you want an LGBTQIA+ mentee?</Label>
+        <input type="radio" id="" name="LGBTQIA" value="Yes">
+        <label for="Yes">Yes</label>
+        <input type="radio" id="" name="LGBTQIA" value="No">
+        <label for="No">No</label>
+        </span>
 
     <Label>Do you want to disclose religion?</Label>
 
@@ -174,33 +177,37 @@
     <Label>Race/Ethnicity (see list from above, click as many as applicable)</Label>
     <Label>Age</Label>    
     <Label>Employer (fill in)</Label>      
-    <Label>Are you a student? (Y/N)</Label>    
+    <span><Label>Are you a student? (Y/N)</Label> 
+        <input type="radio" id="" name="student" value="Yes">
+        <label for="Yes">Yes</label>
+        <input type="radio" id="" name="student" value="No">
+        <label for="No">No</label><br> </span>  
     <span><Label>Household income</Label>    
     <select id="income" name="income">
-        <option value="">Select state</option>
+        <option value="">Select Income Range</option>
         <option value="">less than $10,000</option>
-        <option value="">$10,000-$25,000</option>
-        <option value="">$25,000-$50,000</option>
-        <option value="">$50,000-$75,000</option>
-        <option value="">$75,000-$100,000</option>
-        <option value="">$100,000-$125,000</option>
-        <option value="">$125,000-$150,000</option>
-        <option value="">$150,000-above</option>
+        <option value="">$10,000 - $25,000</option>
+        <option value="">$25,000 - $50,000</option>
+        <option value="">$50,000 - $75,000</option>
+        <option value="">$75,000 - $100,000</option>
+        <option value="">$100,000 - $125,000</option>
+        <option value="">$125,000 - $150,000</option>
+        <option value="">$150,000 - Above</option>
         </select>  
         </span>
 
     <span><Label>Are you willing to consent to a background check prior to joining any PYD program? (Yes/No)</Label>
     <br>
-    <input type="radio" id="" name="backgroundcheck" value="HTML">
+    <input type="radio" id="" name="backgroundcheck" value="Yes">
     <label for="Yes">Yes</label>
-    <input type="radio" id="" name="backgroundcheck" value="CSS">
+    <input type="radio" id="" name="backgroundcheck" value="No">
     <label for="No">No</label><br></span>
 
    <span> <Label>Are you willing to complete an orientation/training on mentoring youth with disabilities (Yes/No)</Label>
     <br>
-    <input type="radio" id="" name="training" value="HTML">
+    <input type="radio" id="" name="training" value="Yes">
     <label for="Yes">Yes</label>
-    <input type="radio" id="" name="training" value="CSS">
+    <input type="radio" id="" name="training" value="No">
     <label for="No">No</label><br></span>
     <span><Label>Attach consent form to do background check with digital signature or some other of way to capturing signatures electronically</Label>
 
@@ -218,8 +225,11 @@
 
     Label{
         margin-top: 1em;
-    }
 
+    }
+.zip{
+    margin-right: 0.5em;
+}
     span{
         margin-top:1em;
     }
