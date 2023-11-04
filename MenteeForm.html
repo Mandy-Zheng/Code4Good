@@ -24,6 +24,9 @@
     <div>
         <input type="checkbox" id="virtual" name="virtual" value="Virtual"> Virtual
     </div>
+    <div>
+        <input type="checkbox" id="hybrid" name="hybrid" value="Hybrid"> Hybrid
+    </div>
     <br>
     
     <label> Enter your Zip code: </label><br>
@@ -143,7 +146,7 @@
     <br> 
 
     <br>
-    <label> When are you available to meet with your mentee? </label>
+    <label> When are you available to meet with your mentor? </label>
     <div> 
         <input type="checkbox" id="option1" name="Weekday afternoons" value="Weekday afternoons"> Weekday afternoons
     </div>
@@ -163,6 +166,7 @@
 
     <br>
     <label> What is your primary language? </label>
+        <br>
         <label>
             <input type="radio" name="language" value="English"> English
         </label><br>
@@ -204,8 +208,8 @@
     <br>
     
     <br>
-    <p> What languages other than English do you speak fluently? </p>
- 
+    <label> Do you need your mentor to speak a language other than English? If so, which one? </label>
+    
         <legend>Check all that apply</legend>
         <label>
             <input type="checkbox" name="languages" value="English"> English
@@ -270,7 +274,7 @@
     <br> 
 
     <br>
-    <label> Select your preferred gender for your mentees </label>
+    <label> Select your preferred gender for your mentor </label>
     <div> 
         <input type="checkbox" id="option1" name="Man" value="Man"> Man
     </div>
@@ -279,7 +283,7 @@
     </div>
     <div>
         <input type="checkbox" id="option3" name="Nonbinary" value="Nonbinary"> Nonbinary
-    <br>
+    <br> 
 
     <br>
     <label> Select your race/ethnicity </label>
@@ -304,6 +308,18 @@
     <br>
 
     <br>
+    <label> Select your preferred race/ethnicity for your mentor </label>
+    <div> 
+        <input type="checkbox" id="option1" name="Man" value="Man"> Man
+    </div>
+    <div>
+        <input type="checkbox" id="option2" name="Woman" value="Woman"> Woman
+    </div>
+    <div>
+        <input type="checkbox" id="option3" name="Nonbinary" value="Nonbinary"> Nonbinary
+    <br>
+
+    <br>
     <label> Select your preferred race/ethnicity for your mentee </label>
     <div>
         <input type="checkbox" id="option4" name="Black" value="Black"> Black
@@ -325,7 +341,7 @@
     <br>
 
     <br>
-    <label> Up to what education level do you feel comfortable supporting a mentee? </label>
+    <label> What is the education level you have/wish to go to? </label>
     <div>
         <input type="radio" id="option1" name="education" value="High school">
         <label for="option1">High school</label>
@@ -362,7 +378,7 @@
     <br>
 
     <br>
-    <label> Do you want a mentee with a similar disability to yours? </label>
+    <label> Do you want a mentor with a similar disability to yours?</label>
     <div>
         <input type="radio" id="option1" name="disability" value="Yes"> Yes
     </div>
@@ -376,7 +392,32 @@
 
     <br>
     <label> Do you want to elaborate/describe your disability? </label>
+    <div>
+        <input type="radio" name="answer" value="yes" onchange="showTextBox()"> Yes
+    </div>
+    <div>
+        <input type="radio" name="answer" value="no" onchange="showTextBox()"> No 
+    </div>
     <br>
+
+    <div id="text-box" style="display: none;">
+        <label for="text">Describe your disability:</label>
+        <br>
+        <textarea id="text" name="text" rows="4" cols="50" style="font-size: 16px;"></textarea>
+    </div>
+
+    <script>
+        function showTextBox() {
+            var answer = document.querySelector('input[name="answer"]:checked').value;
+            var textBox = document.getElementById('text-box');
+    
+            if (answer === 'yes') {
+            textBox.style.display = 'block';
+            } else {
+            textBox.style.display = 'none';
+            }
+        }
+        </script>
 
     <br>
     <label> Do you identify as a member of the LGBTQIA+ Community? </label>
@@ -389,7 +430,7 @@
     <br>
 
     <br> 
-    <label> Do you want an LGBTQIA+ mentee? </label>
+    <label> Do you want an LGBTQIA+ mentor? </label>
     <div>
         <input type="radio" id="option1" name="lgtbq" value="Yes"> Yes
     </div>
@@ -433,7 +474,7 @@
     <br> 
 
     <br>
-    <label> Do you want someone with a similar religion to yours? (if previous question was answered) </label>
+    <label> Do you want someone with a similar religion to yours? </label>
     <div>
         <input type="radio" id="option1" name="religion" value="Yes"> Yes
     </div>
@@ -444,26 +485,29 @@
         <input type="radio" id="option2" name="religion" value="Doesn't matter"> Doesn't matter
     <br>
 
+
+
     <br>
-    <label> What age range do you want your mentee to be? </label>
+    <label> What age range do you want your mentor to be? </label>
     <br>
-    <input type="range" id="age" name="age" min="6" max="22" value="6">
-    <span id="ageValue">6</span>
+    <input type="range" id="age" name="age" min="18" max="100" value="18">
+    <span id="ageValue">18 years old</span>
 
     <script>
         const ageSlider = document.getElementById("age");
         const ageValue = document.getElementById("ageValue");
 
         ageSlider.addEventListener("input", function() {
-            ageValue.textContent = this.value;
+            ageValue.textContent = this.value + " " + "years old";
         });
     </script>
+
     <br>
 
     <h2> Lifestyle and Mentoring Program Choice Questions </h2> 
 
     <br>
-    <label> What mentee goals for this mentorship relationship do you feel comfortable supporting? </label>
+    <label> What are your goals for this mentorship relationship? </label>
     <div>
         <input type="checkbox" id="option1" name="interests" value="Make a friend"> Make a friend
     </div>
@@ -491,7 +535,7 @@
     <br>
     
     <br>
-    <label> What are some areas of growth I can support my mentee through? </label>
+    <label> What is an area I would like to grow or get better at from my mentorship experience? </label>
     
     <div>
         <input type="checkbox" id="option1" name="interests" value="Do better in school"> Do better in school
@@ -558,8 +602,8 @@
     <br> 
 
     <br>
-    <label> Select 5 or more hobbies and interests from the following list that appeal to you and you would be willing to share with the mentee. </label>
-  
+    <label> Select up to 5 hobbies and interests from the following list that are important to you. </label>
+    
     <div>
         <input type="checkbox" id="option21" name="interests" value="Animals/Going to Zoo"> Animals/Going to Zoo
     </div>
@@ -641,7 +685,7 @@
     <br> 
 
     <br>
-    <label> Select up to 5 qualities that you feel best describe you </label>
+    <label> Select up to 5 qualities from the following list that are important for your mentor to have. </label>
     <div>
         <input type="checkbox" id="option47" name="personality" value="Have a sense of humor/Funny"> Have a sense of humor/Funny
     </div>
@@ -687,7 +731,7 @@
     <br> 
 
     <br>
-    <label> What is the most important factor for you when it comes to a mentee? </label>
+    <label> What is the most important factor for you when it comes to a mentor?</label>
     <select id="question" name="question">
         <option value="" disabled selected>Select a question</option>
         <option value="mentoringPreference">How do you want your mentoring relationship to primarily take place?</option>
@@ -720,7 +764,7 @@
     <br> 
 
     <br>
-    <label> What is the second most important factor for you when it comes to a mentee? </label>
+    <label> What is the second most important factor for you when it comes to a mentor? </label>
     <select id="question" name="question">
         <option value="" disabled selected>Select a question</option>
         <option value="mentoringPreference">How do you want your mentoring relationship to primarily take place?</option>
@@ -753,7 +797,7 @@
     <br> 
 
     <br>
-    <label> What is the third most important factor for you when it comes to a mentee?</label>
+    <label> What is the third most important factor for you when it comes to a mentor? </label>
     <select id="question" name="question">
         <option value="" disabled selected>Select a question</option>
         <option value="mentoringPreference">How do you want your mentoring relationship to primarily take place?</option>
@@ -784,7 +828,7 @@
         <option value="qualities">Select up to 5 qualities that you feel best describe you.</option>
     </select>
     <br>
-  </form>
+    </form>
 </body>
 
 <style scoped>
@@ -797,3 +841,4 @@
     }
 </style>
 </html>
+
