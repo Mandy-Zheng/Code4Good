@@ -6,6 +6,10 @@ import math
 
 # selectionA, selectionB --> string
 def dropdown_Equality(selectionA, selectionB):
+    """
+    If selections are the same, return 1.
+    Else, return 0
+    """
     if selectionA == selectionB:
         return 1
     else:
@@ -13,6 +17,10 @@ def dropdown_Equality(selectionA, selectionB):
 
 # selectionA, selectionB --> string
 def radio_Equality(selectionA, selectionB):
+    """
+    If selections are the same, return 1.
+    Else, return 0
+    """
     if selectionA == selectionB:
         return 1
     else:
@@ -21,6 +29,9 @@ def radio_Equality(selectionA, selectionB):
 # selectionA, selectionB --> set of string options
 def multiSelect_Equality(selectionA, selectionB, options):
     # selectionA, selectionB, options: lists of mentee, mentor, and all possible answer options for that question
+    """
+    Returns the fraction of drop down options that the mentee and the mentor selected the same value for
+    """
     matches = 0
     for i in options:
         if i in selectionA and i in selectionB:
@@ -32,6 +43,9 @@ def multiSelect_Equality(selectionA, selectionB, options):
 
 # selectionA, selectionB --> num
 def slider_Equality(selectionA, selectionB):
+    """
+    Returns 1 if the selections are the same, 0 otherwise
+    """
     if int(selectionA) == int(selectionB):
         return 1
     else:
@@ -39,6 +53,9 @@ def slider_Equality(selectionA, selectionB):
 
 # zipA, zipB --> num
 def location_Equality(zipA, zipB, distance_pref):
+    """
+    Returns 1 if distance between the mentee's and mentor's zipcodes is smaller than the preferred distance, 0 otherwise
+    """
     if get_distance_between_zip_codes(zipA, zipB) <= distance_pref:
         return 1
     else:
