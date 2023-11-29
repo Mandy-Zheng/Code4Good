@@ -59,6 +59,10 @@ def matchingAlgorithm(mentor, mentee):
             if mentor_value == mentee_value:
                 total_score += 1
         elif question_type == QuestionType.MULTISELECT:
-            total += multiSelect_Equality(mentor_value, mentee_value)
+            total += utils.multiSelect_Equality(mentor_value, mentee_value, OPTIONS ??)
+        elif question_type == QuestionType.DROPDOWN:
+            total += utils.dropdown_Equality(mentor_value, mentee_value)
+        else:
+            total += utils.radio_Equality(mentor_value, mentee_value)
 
     return score
