@@ -1,5 +1,5 @@
 from utils import multiSelect_Equality, dropdown_Equality, radio_Equality
-from constants import QuestionType, Gender, Race, MentorSession, Times, Goals, Grow, Hobby, Qualities, Pronouns
+from constants import QuestionType, Gender, Race, MentorSession, Times, Goals, Grow, Hobby, Qualities, Pronouns, Languages
 # please update specs as necessary and modify for documentation once you finish
 
 
@@ -30,7 +30,7 @@ Form_Questions = {
     "Have Disability": {"type": QuestionType.RADIO, "val": ""},
     "Your Disability": {"type": QuestionType.RADIO, "val": ""},
     "Primary Language": {"type": QuestionType.RADIO, "val": ""},
-    "Additional Languages": {"type": QuestionType.MULTISELECT, "val": [], "options": [Languages.ENGLISH, Languages.SPANISH, Languages.PORTUGUESE, Languages.CANTONESE, Languages.MANDARIN, Languages.FRENCH, Languages.HAITIAN CREOLE, Languages.AMERICAN SIGN LANGUAGE, Languages.OTHER]},
+    "Additional Languages": {"type": QuestionType.MULTISELECT, "val":"", "options": [Languages.ENGLISH, Languages.SPANISH, Languages.PORTUGUESE, Languages.CANTONESE, Languages.MANDARIN, Languages.FRENCH, Languages.HAITIAN, Languages.AMERICANSL, Languages.OTHER]},
     "Other Text Field": {"type": QuestionType.UNWEIGHTED, "val": ""},
     "Your Qualities": {"type": QuestionType.MULTISELECT, "val": [], "options": [Qualities.FUNNY, Qualities.SERIOUS, Qualities.AMBITIOUS, Qualities.SCIENTIFIC, Qualities.COURAGEOUS, Qualities.RELAXED, Qualities.SUPPORTIVE, Qualities.OUTGOING, Qualities.CONFIDENT, Qualities.SOCIAL, Qualities.SHY, Qualities.EXPERIENCED, Qualities.STUDIOUS]},
     "Preferred Gender": {"type": QuestionType.MULTISELECT, "val": [], "options": [Gender.MAN, Gender.WOMAN, Gender.NONBINARY]},

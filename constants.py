@@ -116,4 +116,15 @@ class Pronouns(Enum):
     HE = 'He', 
     SHE = 'She',
     THEY = 'They',
-    OTHER = 'Other',
+    OTHER = 'Other'
+
+class Languages(Enum):
+    ENGLISH = 'English',
+    SPANISH = 'Spanish',
+    PORTUGUESE = 'Portuguese',
+    CANTONESE = 'Cantonese',
+    MANDARIN = 'Mandarin',
+    FRENCH = 'French',
+    HAITIAN = 'Haitian Creole',
+    AMERICANSL = 'American Sign Language',
+    OTHER = 'Other'
