@@ -56,13 +56,13 @@ def matchingAlgorithm(mentor, mentee):
             mentee_q_val = mentee.get(priority_q, {}).get("val")
             return priority1_weight * question_eval(q_type, mentor_q_val, mentee_q_val)
         elif question_type == QuestionType.PRIORITY2:
-            priority_q = mentor_value.get("val") # name of first priority question
+            priority_q = mentor_value.get("val") # name of second priority question
             q_type = Form_Questions.get(priority_q).get("type")
             mentor_q_val = mentor.get(priority_q, {}).get("val")
             mentee_q_val = mentee.get(priority_q, {}).get("val")
             return priority2_weight * question_eval(q_type, mentor_q_val, mentee_q_val)
         elif question_type == QuestionType.PRIORITY3:
-            priority_q = mentor_value.get("val") # name of first priority question
+            priority_q = mentor_value.get("val") # name of third priority question
             q_type = Form_Questions.get(priority_q).get("type")
             mentor_q_val = mentor.get(priority_q, {}).get("val")
             mentee_q_val = mentee.get(priority_q, {}).get("val")
