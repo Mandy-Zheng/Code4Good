@@ -1,33 +1,35 @@
-import math
-from enum import Enum
 from utils import multiSelect_Equality, dropdown_Equality, radio_Equality
-
+from constants import QuestionType, Gender, Race, MentorSession, Times, Goals, Grow, Hobby, Qualities
 # please update specs as necessary and modify for documentation once you finish
 
-# Enums
-# All non-preference questions (not included in calculation) are classified as UNWEIGHTED
-class QuestionType(Enum):
-    UNWEIGHTED = 0
-    RADIO = 1
-    MULTISELECT = 2
-    DROPDOWN = 3
-    TEXT = 4
-    SLIDER = 5
-    PRIORITY1 = 6
-    PRIORITY2 = 7
-    PRIORITY3 = 8
-    #...etc
-    
 
+    
 # fill out what the input should look like in the format of
 # attribute: {"type": QuestionType, "val": empty version of primitive type} of form type
 # make enums as necessary
 Form_Questions = {
     "name": {"type": QuestionType.UNWEIGHTED, "val": ""},
     "email": {"type": QuestionType.UNWEIGHTED, "val": ""},
-    "pref_gender": {"type": QuestionType.MULTISELECT, "val": []},
-    "travel": {"type": QuestionType.MULTISELECT, "val": []},
-    "priority1": {"type": QuestionType.PRIORITY1, "val": ""} 
+    "pref_gender": {"type": QuestionType.MULTISELECT, "val": [], "options": [Gender.MAN, Gender.WOMAN, Gender.NONBINARY]},
+    "travel": {"type": QuestionType.UNWEIGHTED, "val":"" },
+    "pref_race": {"type": QuestionType.MULTISELECT, "val": [Race.BLACK, Race.WHITE, Race.HISPANIC, Race.ASIAN, Race.MIDEASTERN, Race.AMERICANINDIAN]},
+    "mentoring_relationship": {"type": QuestionType.MULTISELECT, "val": [], "options": [MentorSession.PERSON, MentorSession.VIRTUAL, MentorSession.HYBRID]}, # in-person, virtual, or hybrid
+    "availability": {"type": QuestionType.MULTISELECT, "val": [], "options":[Times.WEEKDAYA, Times.WEEKDAYE, Times.WEEKENDM, Times.WEEKENDA, Times.WEEKENDE]},
+    "similar_disability": {"type": QuestionType.RADIO, "val": ""},
+    "mentee_disability": {"type": QuestionType.RADIO, "val": ""},
+    "LGBTQIA": {"type": QuestionType.RADIO, "val": ""},
+    "similar_religion": {"type": QuestionType.RADIO, "val": ""},
+    "mentee_religion": {"type": QuestionType.RADIO, "val": ""},
+    "pref_min_age": {"type": QuestionType.UNWEIGHTED, "val": ""},
+    "pref_max_age": {"type": QuestionType.UNWEIGHTED, "val": ""},
+    "goals": {"type": QuestionType.MULTISELECT, "val": [], "options": [Goals.FRIEND, Goals.INDEPENDENCE, Goals.CAREER, Goals.SKILL, Goals.COMMUNITY, Goals.ACTIVITIES, Goals.HOBBY, Goals.CHAT]},
+    "grow": {"type": QuestionType.MULTISELECT, "val": [], "options": [Grow.SCHOOL, Grow.LISTENER, Grow.CONFIDENCE, Grow.WORK, Grow.PEOPLE, Grow.FUNNY, Grow.ORGANIZATION, Grow.LEARN, Grow.FAMILY, Grow.ANXIETY, Grow.TIME, Grow.COMFORT, Grow.MONEY, Grow.MYSELF, Grow.PERSPECTIVE, Grow.TRUST, Grow.PUBLIC, Grow.MEETINGS]},
+    "hobbies": {"type": QuestionType.MULTISELECT, "val": [Hobby.ANIMALS, Hobby.ANIME, Hobby.BOARDGAMES, Hobby.BOWLING, Hobby.COOKING, Hobby.DANCING, Hobby.FISHING, Hobby.FASHION, Hobby.MOVIES, Hobby.FRIENDS, Hobby.LIBRARY, Hobby.MUSEUMS, Hobby.MUSIC, Hobby.ART, Hobby.PHOTOS, Hobby.EXERCISE, Hobby.SCIENCE, Hobby.SHOPPING, Hobby.SINGING, Hobby.SPORTS, Hobby.SOCIALMEDIA, Hobby.TECH, Hobby.VOLUNTEER, Hobby.TV, Hobby.WRITING, Hobby.EATING,]},
+    "qualities": {"type": QuestionType.MULTISELECT, "val": [], "options": [Qualities.FUNNY, Qualities.SERIOUS, Qualities.AMBITIOUS, Qualities.SCIENTIFIC, Qualities.COURAGEOUS, Qualities.RELAXED, Qualities.SUPPORTIVE, Qualities.OUTGOING, Qualities.CONFIDENT, Qualities.SOCIAL, Qualities.SHY, Qualities.EXPERIENCED, Qualities.STUDIOUS]},
+    "priority1": {"type": QuestionType.PRIORITY1, "val": ""},
+    "priority2": {"type": QuestionType.PRIORITY2, "val": ""}, 
+    "priority3": {"type": QuestionType.PRIORITY3, "val": ""} 
+
     # val could be like a list (for like multiselect) or strings or number
     # ...etc do this for other questions
 }
@@ -40,12 +42,13 @@ Form_Questions = {
 # add extra points for questions that are most important
 def matchingAlgorithm(mentor, mentee):
     # helper function that checks for equality between form questions
-    def question_eval(question_type, mentor_value, mentee_value):
+    def question_eval(question_type, mentor_value, mentee_value, options = None):
         if question_type == QuestionType.TEXT:
             if mentor_value == mentee_value:
                 return 1
         elif question_type == QuestionType.MULTISELECT:
-            return multiSelect_Equality(mentor_value, mentee_value)
+            options = [] ## idk how to link this to all the options listed in form questions
+            return multiSelect_Equality(mentor_value, mentee_value, options)
         elif question_type == QuestionType.DROPDOWN:
             return dropdown_Equality(mentor_value, mentee_value)
         elif question_type == QuestionType.RADIO:
