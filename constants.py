@@ -112,3 +112,8 @@ class Qualities(Enum):
     EXPERIENCED = "Experience (In career or field of study)",
     STUDIOUS = "Studious"
     
+class Pronouns(Enum):
+    HE = 'He', 
+    SHE = 'She',
+    THEY = 'They',
+    OTHER = 'Other',
