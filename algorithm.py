@@ -1,5 +1,5 @@
 from utils import multiSelect_Equality, dropdown_Equality, radio_Equality
-from constants import QuestionType, Gender, Race, MentorSession, Times, Goals, Grow, Hobby, Qualities
+from constants import QuestionType, Gender, Race, MentorSession, Times, Goals, Grow, Hobby, Qualities, Pronouns, Languages
 # please update specs as necessary and modify for documentation once you finish
 
 
@@ -8,27 +8,48 @@ from constants import QuestionType, Gender, Race, MentorSession, Times, Goals, G
 # attribute: {"type": QuestionType, "val": empty version of primitive type} of form type
 # make enums as necessary
 Form_Questions = {
-    "name": {"type": QuestionType.UNWEIGHTED, "val": ""},
-    "email": {"type": QuestionType.UNWEIGHTED, "val": ""},
-    "pref_gender": {"type": QuestionType.MULTISELECT, "val": [], "options": [Gender.MAN, Gender.WOMAN, Gender.NONBINARY]},
-    "travel": {"type": QuestionType.UNWEIGHTED, "val":"" },
-    "pref_race": {"type": QuestionType.MULTISELECT, "val": [Race.BLACK, Race.WHITE, Race.HISPANIC, Race.ASIAN, Race.MIDEASTERN, Race.AMERICANINDIAN]},
-    "mentoring_relationship": {"type": QuestionType.MULTISELECT, "val": [], "options": [MentorSession.PERSON, MentorSession.VIRTUAL, MentorSession.HYBRID]}, # in-person, virtual, or hybrid
-    "availability": {"type": QuestionType.MULTISELECT, "val": [], "options":[Times.WEEKDAYA, Times.WEEKDAYE, Times.WEEKENDM, Times.WEEKENDA, Times.WEEKENDE]},
-    "similar_disability": {"type": QuestionType.RADIO, "val": ""},
-    "mentee_disability": {"type": QuestionType.RADIO, "val": ""},
-    "LGBTQIA": {"type": QuestionType.RADIO, "val": ""},
-    "similar_religion": {"type": QuestionType.RADIO, "val": ""},
-    "mentee_religion": {"type": QuestionType.RADIO, "val": ""},
-    "pref_min_age": {"type": QuestionType.UNWEIGHTED, "val": ""},
-    "pref_max_age": {"type": QuestionType.UNWEIGHTED, "val": ""},
-    "goals": {"type": QuestionType.MULTISELECT, "val": [], "options": [Goals.FRIEND, Goals.INDEPENDENCE, Goals.CAREER, Goals.SKILL, Goals.COMMUNITY, Goals.ACTIVITIES, Goals.HOBBY, Goals.CHAT]},
-    "grow": {"type": QuestionType.MULTISELECT, "val": [], "options": [Grow.SCHOOL, Grow.LISTENER, Grow.CONFIDENCE, Grow.WORK, Grow.PEOPLE, Grow.FUNNY, Grow.ORGANIZATION, Grow.LEARN, Grow.FAMILY, Grow.ANXIETY, Grow.TIME, Grow.COMFORT, Grow.MONEY, Grow.MYSELF, Grow.PERSPECTIVE, Grow.TRUST, Grow.PUBLIC, Grow.MEETINGS]},
-    "hobbies": {"type": QuestionType.MULTISELECT, "val": [Hobby.ANIMALS, Hobby.ANIME, Hobby.BOARDGAMES, Hobby.BOWLING, Hobby.COOKING, Hobby.DANCING, Hobby.FISHING, Hobby.FASHION, Hobby.MOVIES, Hobby.FRIENDS, Hobby.LIBRARY, Hobby.MUSEUMS, Hobby.MUSIC, Hobby.ART, Hobby.PHOTOS, Hobby.EXERCISE, Hobby.SCIENCE, Hobby.SHOPPING, Hobby.SINGING, Hobby.SPORTS, Hobby.SOCIALMEDIA, Hobby.TECH, Hobby.VOLUNTEER, Hobby.TV, Hobby.WRITING, Hobby.EATING,]},
-    "qualities": {"type": QuestionType.MULTISELECT, "val": [], "options": [Qualities.FUNNY, Qualities.SERIOUS, Qualities.AMBITIOUS, Qualities.SCIENTIFIC, Qualities.COURAGEOUS, Qualities.RELAXED, Qualities.SUPPORTIVE, Qualities.OUTGOING, Qualities.CONFIDENT, Qualities.SOCIAL, Qualities.SHY, Qualities.EXPERIENCED, Qualities.STUDIOUS]},
-    "priority1": {"type": QuestionType.PRIORITY1, "val": ""},
-    "priority2": {"type": QuestionType.PRIORITY2, "val": ""}, 
-    "priority3": {"type": QuestionType.PRIORITY3, "val": ""} 
+    "Your First Name": {"type": QuestionType.UNWEIGHTED, "val": ""},
+    "Your Last Name": {"type": QuestionType.UNWEIGHTED, "val": ""},
+    "Your Phone Number": {"type": QuestionType.UNWEIGHTED, "val": ""},
+    "Your Email": {"type": QuestionType.UNWEIGHTED, "val": ""},
+    "Guardian First Name": {"type": QuestionType.UNWEIGHTED, "val": ""},
+    "Guardian Last Name": {"type": QuestionType.UNWEIGHTED, "val": ""},
+    "Guardian Phone Number": {"type": QuestionType.UNWEIGHTED, "val": ""},
+    "Your Gender": {"type": QuestionType.RADIO, "val": ""},
+    "Your Pronouns": {"type": QuestionType.MULTISELECT, "val": [], "options": [Pronouns.HE, Pronouns.SHE, Pronouns.THEY, Pronouns.OTHER]},
+    "Lgbtqia": {"type": QuestionType.RADIO, "val": ""},
+    "Your Dob": {"type": QuestionType.UNWEIGHTED, "val": ""},
+    "Your Age": {"type": QuestionType.UNWEIGHTED, "val": ""},
+    "Your Program": {"type": QuestionType.UNWEIGHTED, "val": ""},
+    "Your Income": {"type": QuestionType.DROPDOWN, "val": ""},
+    "Your Plan": {"type": QuestionType.RADIO, "val": ""},
+    "Your Education": {"type": QuestionType.RADIO, "val": ""},
+    "Your Zipcode": {"type": QuestionType.UNWEIGHTED, "val": ""},
+    "Your Religion": {"type": QuestionType.RADIO, "val": ""},
+    "County": {"type": QuestionType.DROPDOWN, "val": ""},
+    "Have Disability": {"type": QuestionType.RADIO, "val": ""},
+    "Your Disability": {"type": QuestionType.RADIO, "val": ""},
+    "Primary Language": {"type": QuestionType.RADIO, "val": ""},
+    "Additional Languages": {"type": QuestionType.MULTISELECT, "val": [], "options": [Languages.ENGLISH, Languages.SPANISH, Languages.PORTUGUESE, Languages.CANTONESE, Languages.MANDARIN, Languages.FRENCH, Languages.HAITIAN CREOLE, Languages.AMERICAN SIGN LANGUAGE, Languages.OTHER]},
+    "Other Text Field": {"type": QuestionType.UNWEIGHTED, "val": ""},
+    "Your Qualities": {"type": QuestionType.MULTISELECT, "val": [], "options": [Qualities.FUNNY, Qualities.SERIOUS, Qualities.AMBITIOUS, Qualities.SCIENTIFIC, Qualities.COURAGEOUS, Qualities.RELAXED, Qualities.SUPPORTIVE, Qualities.OUTGOING, Qualities.CONFIDENT, Qualities.SOCIAL, Qualities.SHY, Qualities.EXPERIENCED, Qualities.STUDIOUS]},
+    "Preferred Gender": {"type": QuestionType.MULTISELECT, "val": [], "options": [Gender.MAN, Gender.WOMAN, Gender.NONBINARY]},
+    "Preferred Travel Distance": {"type": QuestionType.UNWEIGHTED, "val":"" },
+    "Preferred Race": {"type": QuestionType.MULTISELECT, "val": [Race.BLACK, Race.WHITE, Race.HISPANIC, Race.ASIAN, Race.MIDEASTERN, Race.AMERICANINDIAN]},
+    "Preferred Setting": {"type": QuestionType.MULTISELECT, "val": [], "options": [MentorSession.PERSON, MentorSession.VIRTUAL, MentorSession.HYBRID]}, # in-person, virtual, or hybrid
+    "Preferred Time": {"type": QuestionType.MULTISELECT, "val": [], "options":[Times.WEEKDAYA, Times.WEEKDAYE, Times.WEEKENDM, Times.WEEKENDA, Times.WEEKENDE]},
+    "Preferred Disability": {"type": QuestionType.RADIO, "val": ""},
+    "Preferred Lgbtqia": {"type": QuestionType.RADIO, "val": ""},
+    "Preferred Religion": {"type": QuestionType.RADIO, "val": ""},
+    "Preferred Minimum Age": {"type": QuestionType.UNWEIGHTED, "val": ""},
+    "Preferred Maximum Age": {"type": QuestionType.UNWEIGHTED, "val": ""},
+    "Preferred Goals": {"type": QuestionType.MULTISELECT, "val": [], "options": [Goals.FRIEND, Goals.INDEPENDENCE, Goals.CAREER, Goals.SKILL, Goals.COMMUNITY, Goals.ACTIVITIES, Goals.HOBBY, Goals.CHAT]},
+    "Preferred Growth Areas": {"type": QuestionType.MULTISELECT, "val": [], "options": [Grow.SCHOOL, Grow.LISTENER, Grow.CONFIDENCE, Grow.WORK, Grow.PEOPLE, Grow.FUNNY, Grow.ORGANIZATION, Grow.LEARN, Grow.FAMILY, Grow.ANXIETY, Grow.TIME, Grow.COMFORT, Grow.MONEY, Grow.MYSELF, Grow.PERSPECTIVE, Grow.TRUST, Grow.PUBLIC, Grow.MEETINGS]},
+    "Preferred Interests": {"type": QuestionType.MULTISELECT, "val": [Hobby.ANIMALS, Hobby.ANIME, Hobby.BOARDGAMES, Hobby.BOWLING, Hobby.COOKING, Hobby.DANCING, Hobby.FISHING, Hobby.FASHION, Hobby.MOVIES, Hobby.FRIENDS, Hobby.LIBRARY, Hobby.MUSEUMS, Hobby.MUSIC, Hobby.ART, Hobby.PHOTOS, Hobby.EXERCISE, Hobby.SCIENCE, Hobby.SHOPPING, Hobby.SINGING, Hobby.SPORTS, Hobby.SOCIALMEDIA, Hobby.TECH, Hobby.VOLUNTEER, Hobby.TV, Hobby.WRITING, Hobby.EATING,]},
+    "Preferred Personality": {"type": QuestionType.MULTISELECT, "val": [], "options": [Qualities.FUNNY, Qualities.SERIOUS, Qualities.AMBITIOUS, Qualities.SCIENTIFIC, Qualities.COURAGEOUS, Qualities.RELAXED, Qualities.SUPPORTIVE, Qualities.OUTGOING, Qualities.CONFIDENT, Qualities.SOCIAL, Qualities.SHY, Qualities.EXPERIENCED, Qualities.STUDIOUS]},
+    "Priority 1": {"type": QuestionType.PRIORITY1, "val": ""},
+    "Priority 2": {"type": QuestionType.PRIORITY2, "val": ""}, 
+    "Priority 3": {"type": QuestionType.PRIORITY3, "val": ""} 
 
     # val could be like a list (for like multiselect) or strings or number
     # ...etc do this for other questions
