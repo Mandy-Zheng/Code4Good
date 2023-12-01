@@ -15,4 +15,5 @@ result = sf.query("SELECT Id, Name, Email, MailingAddress FROM Contact")
 # Print the results
 print(len(result['records']))
 for record in result['records']:
-    print(f"Account ID: {record['Id']}, Name: {record['Name']}, Email: {record['Email']}, Ethnicity: {record['MailingAddress']}")
+
+    print(f"Account ID: {record['Id']}, Name: {record['Name']}, Email: {record['Email']}, address: {record['MailingAddress']}")

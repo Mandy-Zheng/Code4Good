@@ -1,5 +1,6 @@
 import math
 from enum import Enum
+from utils import multiSelect_Equality, dropdown_Equality, radio_Equality
 
 # please update specs as necessary and modify for documentation once you finish
 
@@ -44,11 +45,11 @@ def matchingAlgorithm(mentor, mentee):
             if mentor_value == mentee_value:
                 return 1
         elif question_type == QuestionType.MULTISELECT:
-            return utils.multiSelect_Equality(mentor_value, mentee_value)
+            return multiSelect_Equality(mentor_value, mentee_value)
         elif question_type == QuestionType.DROPDOWN:
-            return utils.dropdown_Equality(mentor_value, mentee_value)
+            return dropdown_Equality(mentor_value, mentee_value)
         elif question_type == QuestionType.RADIO:
-            return utils.radio_Equality(mentor_value, mentee_value)
+            return radio_Equality(mentor_value, mentee_value)
         elif question_type == QuestionType.PRIORITY1:
             priority_q = mentor_value.get("val") # name of first priority question
             q_type = Form_Questions.get(priority_q).get("type")
