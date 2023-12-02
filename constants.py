@@ -13,6 +13,8 @@ class QuestionType(Enum):
     PRIORITY1 = 6
     PRIORITY2 = 7
     PRIORITY3 = 8
+    RANGE = 9
+    DISTANCE = 10
     
 class Race(Enum):
     BLACK = "Black"
