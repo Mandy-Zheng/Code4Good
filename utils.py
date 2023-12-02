@@ -60,3 +60,17 @@ def location_Equality(zipA, zipB, distance_pref):
         return 1
     else:
         return 0
+    
+def language_Intersection(languagesA, languagesB):
+    for language in languagesA:
+        if language in languagesB:
+            return 1
+    return 0
+
+def agerange_Equality(ageA, ageB):
+    """
+    ageA should be the age of the targeted person. ageB is a tuple with in the form of (preferred min age, preferred max age)
+    """
+    if ageA <= ageB[1] and ageA >= ageB[0]:
+        return 1
+    return 0
