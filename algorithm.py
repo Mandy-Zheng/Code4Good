@@ -1,4 +1,4 @@
-from utils import multiSelect_Equality, dropdown_Equality, radio_Equality
+from utils import multiSelect_Equality, dropdown_Equality, radio_Equality, slider_Equality
 from constants import QuestionType, Gender, Race, MentorSession, Times, Goals, Grow, Hobby, Qualities, Pronouns, Languages
 # please update specs as necessary and modify for documentation once you finish
 
@@ -55,43 +55,49 @@ Form_Questions = {
     # ...etc do this for other questions
 }
 
+Paired_Questions = {
+    "Preferred Gender": "Your Gender",
+
+}
+
 
 # mentor - have same format as Form_Questions
 # mentee - have same format as Form_Questions
 # keep in mind deal breakers
 # sum up matchings of mentor/mentee form
 # add extra points for questions that are most important
-def matchingAlgorithm(mentor, mentee):
+def matchingAlgorithm(self, preference):
     # helper function that checks for equality between form questions
-    def question_eval(question_type, mentor_value, mentee_value, options = None):
+    def question_eval(question_type, preference_value, self_value, options=None):
         if question_type == QuestionType.TEXT:
-            if mentor_value == mentee_value:
+            if preference_value == self_value:
                 return 1
         elif question_type == QuestionType.MULTISELECT:
-            options = [] ## idk how to link this to all the options listed in form questions
-            return multiSelect_Equality(mentor_value, mentee_value, options)
+            return multiSelect_Equality(preference_value, self_value, options)
+        elif question_type == QuestionType.SLIDER:
+            return slider_Equality(preference_value, self_value)
         elif question_type == QuestionType.DROPDOWN:
-            return dropdown_Equality(mentor_value, mentee_value)
+            return dropdown_Equality(preference_value, self_value)
         elif question_type == QuestionType.RADIO:
-            return radio_Equality(mentor_value, mentee_value)
+            return radio_Equality(preference_value, self_value)
         elif question_type == QuestionType.PRIORITY1:
-            priority_q = mentor_value.get("val") # name of first priority question
-            q_type = Form_Questions.get(priority_q).get("type")
-            mentor_q_val = mentor.get(priority_q, {}).get("val")
-            mentee_q_val = mentee.get(priority_q, {}).get("val")
-            return priority1_weight * question_eval(q_type, mentor_q_val, mentee_q_val)
+            preference_question = Form_Questions[preference_value]
+            question_type = preference_question["type"]
+            preference_value = preference_value.get("val")
+            self_value = Form_Questions[Paired_Questions[preference_value]].get("val")
+            return priority1_weight * question_eval(question_type, preference_value, self_value)
         elif question_type == QuestionType.PRIORITY2:
-            priority_q = mentor_value.get("val") # name of second priority question
-            q_type = Form_Questions.get(priority_q).get("type")
-            mentor_q_val = mentor.get(priority_q, {}).get("val")
-            mentee_q_val = mentee.get(priority_q, {}).get("val")
-            return priority2_weight * question_eval(q_type, mentor_q_val, mentee_q_val)
+            preference_question = Form_Questions[preference_value]
+            question_type = preference_question["type"]
+            preference_value = preference_value.get("val")
+            self_value = Form_Questions[Paired_Questions[preference_value]].get("val")
+            return priority2_weight * question_eval(question_type, preference_value, self_value)
         elif question_type == QuestionType.PRIORITY3:
-            priority_q = mentor_value.get("val") # name of third priority question
-            q_type = Form_Questions.get(priority_q).get("type")
-            mentor_q_val = mentor.get(priority_q, {}).get("val")
-            mentee_q_val = mentee.get(priority_q, {}).get("val")
-            return priority3_weight * question_eval(q_type, mentor_q_val, mentee_q_val)
+            preference_question = Form_Questions[preference_value]
+            question_type = preference_question["type"]
+            preference_value = preference_value.get("val")
+            self_value = Form_Questions[Paired_Questions[preference_value]].get("val")
+            return priority3_weight * question_eval(question_type, preference_value, self_value)
         
         # UNWEIGHTED question type
         return 0
@@ -108,20 +114,27 @@ def matchingAlgorithm(mentor, mentee):
     priority3_weight = 5
 
     # define dealbreakers
-    dealbreakers = ["travel", ]
+    dealbreakers = ["Preferred Travel Distance", ]
 
 
     # iterate through form questions
-    for question, spec in Form_Questions.items():
-        question_type = spec["type"]
-        mentor_value = mentor.get(question, {}).get("val")
-        mentee_value = mentee.get(question, {}).get("val")
-
-        if question in dealbreakers:
-            if mentor_value != mentee_value:
+    for preference_question, self_question in Paired_Questions.items():
+        question_type = Form_Questions[preference_question]["type"]
+        preference_value = preference.get(preference_question, {}).get("val")
+        self_value = self.get(self_question, {}).get("val")
+        
+        # check for dealbreaker
+        if preference_question in dealbreakers:
+            compatibility = question_eval(question_type, preference_value, self_value)
+            if compatibility < 0.5:
                 total_score -= dealbreaker_weight
             continue
         
-        total_score += question_eval(question_type, mentor_value, mentee_value)
+        # increment total compatibility score by this question's compatibility
+        if question_type ==QuestionType.MULTISELECT:
+            options = Form_Questions[preference_question]["options"]
+            total_score += question_eval(question_type, preference_value, self_value, options)
+        else:
+            total_score += question_eval(question_type, preference_value, self_value)
         
     return total_score
