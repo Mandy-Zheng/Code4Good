@@ -21,7 +21,7 @@ Form_Questions = {
     "Your Age": { "val": "","type": QuestionType.RANGE},
     "Your Education Plans": { "val": "","type": QuestionType.MULTISELECT},  #
     "Your Primary Language": {"val": "", "type": QuestionType.RADIO},
-    "Additional Languages": {"val": [],"type": QuestionType.MULTISELECT, "options": [Languages.ENGLISH, Languages.SPANISH, Languages.PORTUGUESE, Languages.CANTONESE, Languages.MANDARIN, Languages.FRENCH, Languages.HAITIAN, Languages.AMERICANSL, Languages.OTHER]},
+    "Your Additional Languages": {"val": [],"type": QuestionType.MULTISELECT, "options": [Languages.ENGLISH, Languages.SPANISH, Languages.PORTUGUESE, Languages.CANTONESE, Languages.MANDARIN, Languages.FRENCH, Languages.HAITIAN, Languages.AMERICANSL, Languages.OTHER]},
     "Preferred Gender": { "val": [],"type": QuestionType.MULTISELECT,  "options":[Gender.MAN, Gender.WOMAN, Gender.NONBINARY]},
     "Preferred Race": {"val": [], "type": QuestionType.MULTISELECT,  "options":[Race.BLACK, Race.WHITE, Race.HISPANIC, Race.ASIAN, Race.MIDEASTERN, Race.AMERICANINDIAN]},
     "Preferred Travel Distance": {"val": "", "type": QuestionType.DISTANCE},
@@ -53,7 +53,7 @@ FORM = {
     "Your Age": [QuestionType.RANGE],
     "Your Education Plans": [QuestionType.MULTISELECT],  #
     "Your Primary Language": [QuestionType.RADIO],
-    "Additional Languages": [ QuestionType.MULTISELECT,  [Languages.ENGLISH, Languages.SPANISH, Languages.PORTUGUESE, Languages.CANTONESE, Languages.MANDARIN, Languages.FRENCH, Languages.HAITIAN, Languages.AMERICANSL, Languages.OTHER]],
+    "Your Additional Languages": [ QuestionType.MULTISELECT,  [Languages.ENGLISH, Languages.SPANISH, Languages.PORTUGUESE, Languages.CANTONESE, Languages.MANDARIN, Languages.FRENCH, Languages.HAITIAN, Languages.AMERICANSL, Languages.OTHER]],
     "Preferred Gender": [QuestionType.MULTISELECT, [Gender.MAN, Gender.WOMAN, Gender.NONBINARY]],
     "Preferred Race": [QuestionType.MULTISELECT, [Race.BLACK, Race.WHITE, Race.HISPANIC, Race.ASIAN, Race.MIDEASTERN, Race.AMERICANINDIAN]],
     "Preferred Travel Distance": [QuestionType.DISTANCE],
@@ -70,89 +70,95 @@ FORM = {
     "Preferred Qualities": [QuestionType.MULTISELECT, [Qualities.FUNNY, Qualities.SERIOUS, Qualities.AMBITIOUS, Qualities.SCIENTIFIC, Qualities.COURAGEOUS, Qualities.RELAXED, Qualities.SUPPORTIVE, Qualities.OUTGOING, Qualities.CONFIDENT, Qualities.SOCIAL, Qualities.SHY, Qualities.EXPERIENCED, Qualities.STUDIOUS]],
     }
 
-
-def match(preference, possible_match):
+def match(mentor, mentee):
     score = 0
-    for question in preference.keys():
+    preference_questions = ["Preferred Gender", "Preferred Race","Preferred Travel Distance","Preferred Setting","Preferred Time", "Preferred Disability", "Preferred LGBTQIA Status", "Preferred Religion", "Preferred Minimum Age", "Preferred Maximum Age", "Preferred Goals", "Preferred Growth Areas", "Preferred Interests", "Preferred Qualities"]
+    for question in preference_questions:
         if question not in set(['#', "Your First Name", "Your Last Name"]):
-            question_type = preference[question]['type'] 
-            answer1 = preference[question]['val'] 
-            answer2 = possible_match[question]['val']
+            question_type = mentor[question]['type'] 
+            answer1 = mentor[question]['val'] 
+            answer2 = mentee[question]['val']
             if question_type == QuestionType.RADIO:
                 if question == "Your Primary Language":
-                    answer1 = preference["Additional Languages"]['val'] + [answer1]
-                    answer2 = preference["Additional Languages"]['val'] + [answer2]
-                    options = preference["Additional Languages"]['options']
-                    score += multiSelect_Equality(answer1, answer2, options)
+                    score += multiSelect_Equality(mentor["Your Additional Languages"]['val'] + [answer1], mentee["Your Additional Languages"]['val'] + [answer2], options = mentor["Your Additional Languages"]['options'])
                 elif question_type == "Preferred Disability":
-                    answer2 = possible_match["Your Disability"]['val']
-                    score += radio_Equality(answer1, answer2)
+                    score += radio_Equality(mentor["Preferred Disability"]['val'], mentee["Your Disability"]['val'])
+                    score += radio_Equality(mentor["Your Disability"]['val'], mentee["Preferred Disability"]['val'])
                 elif question_type == "Preferred LGBTQIA Status":
-                    answer2 = possible_match["Your LGBTQIA Status"]['val']
-                    score += radio_Equality(answer1, answer2)
-                elif question_type == "Preferred Religion":
-                    answer2 = possible_match["Your Religion"]['val']  
-                    score += radio_Equality(answer1, answer2) 
+                    score += radio_Equality(mentor["Preferred LGBTQIA Status"]['val'], mentee["Your LGBTQIA Status"]['val'])
+                    score += radio_Equality(mentor["Your LGBTQIA Status"]['val'], mentee["Preferred LGBTQIA Status"]['val'])
+                elif question_type == "Preferred Religion": 
+                    score += radio_Equality(mentor["Preferred Religion"]['val'], mentee["Your Religion"]['val']) 
+                    score += radio_Equality(mentor["Your Religion"]['val'], mentee["Preferred Religion"]['val'])
                 else:    
                     score += radio_Equality(answer1, answer2)
             elif question_type == QuestionType.DISTANCE:
-                answer1 = preference["Your Zip Code"]['val'] 
-                answer2 = possible_match["Your Zip Code"]['val'] 
-                score += get_distance_between_zip_codes(answer1, answer2)
+                distance = get_distance_between_zip_codes(mentor["Your Zip Code"]['val'], mentee["Your Zip Code"]['val'])
+                score += 0.5 if distance <= float(mentor["Preferred Travel Distance"]['val']) else 0
+                score += 0.5 if distance <= float(mentee["Preferred Travel Distance"]['val']) else 0 
             elif question_type == QuestionType.MULTISELECT:
-                options = preference[question]['options']
-                if question in set(["Your Education Plans", "Preferred Setting", "Preferred Time", "Preferred Goals", "Preferred Growth Areas", "Preferred Interests", "Preferred Qualities"])
+                options = mentor[question]['options']
+                if question in set(["Your Education Plans", "Preferred Setting", "Preferred Time", "Preferred Goals", "Preferred Growth Areas", "Preferred Interests", "Preferred Qualities"]):
                     multiSelect_Equality(answer1, answer2, options)
                 elif question == "Preferred Gender":
-                    answer2 = possible_match[question]['Your Gender']
-                    score += (answer1, answer2)
+                    score += 1 if mentee['Your Gender']['val'] in mentor["Preferred Gender"]['val'] else 0
+                    score += 1 if mentor['Your Gender']['val'] in mentee["Preferred Gender"]['val'] else 0
                 elif question == "Preferred Race":
-                    answer2 = possible_match[question]['Your Race']
-                    score += (answer1, answer2)
+                    score += 1 if mentee['Your Race']['val'] in mentor["Preferred Race"]['val'] else 0
+                    score += 1 if mentor['Your Race']['val'] in mentee["Preferred Race"]['val'] else 0
             else:
-                min1 = preference["Preferred Minimum Age"]['val'] 
-                max1 = preference["Preferred Maximum Age"]['val']
-                answer2 = possible_match["Your Age"]['val']
+                menteeAge = mentee["Your Age"]['val']
+                score += 1 if menteeAge >= mentor["Preferred Minimum Age"]['val'] and menteeAge <= mentor["Preferred Maximum Age"]['val'] else 0
+                mentorAge = mentor["Your Age"]['val']
+                score += 1 if mentorAge >= mentee["Preferred Minimum Age"]['val'] and mentorAge <= mentee["Preferred Maximum Age"]['val'] else 0
+    return score
+# todo priority questions             
+# todo deal breakers  
+# todo divide by total possible      
                 
-                
-                
+Paired_Questions = {
+    "Preferred Gender": "Your Gender",
+
+}
+
 
 # mentor - have same format as Form_Questions
 # mentee - have same format as Form_Questions
 # keep in mind deal breakers
 # sum up matchings of mentor/mentee form
 # add extra points for questions that are most important
-def matchingAlgorithm(mentor, mentee):
+def matchingAlgorithm(self, preference):
     # helper function that checks for equality between form questions
-    def question_eval(question_type, mentor_value, mentee_value, options = None):
+    def question_eval(question_type, preference_value, self_value, options=None):
         if question_type == QuestionType.TEXT:
-            if mentor_value == mentee_value:
+            if preference_value == self_value:
                 return 1
         elif question_type == QuestionType.MULTISELECT:
-            options = [] ## idk how to link this to all the options listed in form questions
-            return multiSelect_Equality(mentor_value, mentee_value, options)
+            return multiSelect_Equality(preference_value, self_value, options)
+        elif question_type == QuestionType.SLIDER:
+            return slider_Equality(preference_value, self_value)
         elif question_type == QuestionType.DROPDOWN:
-            return dropdown_Equality(mentor_value, mentee_value)
+            return dropdown_Equality(preference_value, self_value)
         elif question_type == QuestionType.RADIO:
-            return radio_Equality(mentor_value, mentee_value)
+            return radio_Equality(preference_value, self_value)
         elif question_type == QuestionType.PRIORITY1:
-            priority_q = mentor_value.get("val") # name of first priority question
-            q_type = Form_Questions.get(priority_q).get("type")
-            mentor_q_val = mentor.get(priority_q, {}).get("val")
-            mentee_q_val = mentee.get(priority_q, {}).get("val")
-            return priority1_weight * question_eval(q_type, mentor_q_val, mentee_q_val)
+            preference_question = Form_Questions[preference_value]
+            question_type = preference_question["type"]
+            preference_value = preference_value.get("val")
+            self_value = Form_Questions[Paired_Questions[preference_value]].get("val")
+            return priority1_weight * question_eval(question_type, preference_value, self_value)
         elif question_type == QuestionType.PRIORITY2:
-            priority_q = mentor_value.get("val") # name of second priority question
-            q_type = Form_Questions.get(priority_q).get("type")
-            mentor_q_val = mentor.get(priority_q, {}).get("val")
-            mentee_q_val = mentee.get(priority_q, {}).get("val")
-            return priority2_weight * question_eval(q_type, mentor_q_val, mentee_q_val)
+            preference_question = Form_Questions[preference_value]
+            question_type = preference_question["type"]
+            preference_value = preference_value.get("val")
+            self_value = Form_Questions[Paired_Questions[preference_value]].get("val")
+            return priority2_weight * question_eval(question_type, preference_value, self_value)
         elif question_type == QuestionType.PRIORITY3:
-            priority_q = mentor_value.get("val") # name of third priority question
-            q_type = Form_Questions.get(priority_q).get("type")
-            mentor_q_val = mentor.get(priority_q, {}).get("val")
-            mentee_q_val = mentee.get(priority_q, {}).get("val")
-            return priority3_weight * question_eval(q_type, mentor_q_val, mentee_q_val)
+            preference_question = Form_Questions[preference_value]
+            question_type = preference_question["type"]
+            preference_value = preference_value.get("val")
+            self_value = Form_Questions[Paired_Questions[preference_value]].get("val")
+            return priority3_weight * question_eval(question_type, preference_value, self_value)
         
         # UNWEIGHTED question type
         return 0
@@ -169,20 +175,27 @@ def matchingAlgorithm(mentor, mentee):
     priority3_weight = 5
 
     # define dealbreakers
-    dealbreakers = ["travel", ]
+    dealbreakers = ["Preferred Travel Distance", ]
 
 
     # iterate through form questions
-    for question, spec in Form_Questions.items():
-        question_type = spec["type"]
-        mentor_value = mentor.get(question, {}).get("val")
-        mentee_value = mentee.get(question, {}).get("val")
-
-        if question in dealbreakers:
-            if mentor_value != mentee_value:
+    for preference_question, self_question in Paired_Questions.items():
+        question_type = Form_Questions[preference_question]["type"]
+        preference_value = preference.get(preference_question, {}).get("val")
+        self_value = self.get(self_question, {}).get("val")
+        
+        # check for dealbreaker
+        if preference_question in dealbreakers:
+            compatibility = question_eval(question_type, preference_value, self_value)
+            if compatibility < 0.5:
                 total_score -= dealbreaker_weight
             continue
         
-        total_score += question_eval(question_type, mentor_value, mentee_value)
+        # increment total compatibility score by this question's compatibility
+        if question_type ==QuestionType.MULTISELECT:
+            options = Form_Questions[preference_question]["options"]
+            total_score += question_eval(question_type, preference_value, self_value, options)
+        else:
+            total_score += question_eval(question_type, preference_value, self_value)
         
     return total_score
