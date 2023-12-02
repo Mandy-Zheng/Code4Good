@@ -2,11 +2,6 @@
 
 from constants import Goals, Grow, Hobby, Languages, MentorSession, Pronouns, Qualities, QuestionType, Times
 
-
-# My_INFO = {1: ["Your First Name", QuestionType.UNWEIGHTED],
-#     2: ["Your Last Name", QuestionType.UNWEIGHTED],
-#     3: ["Your Phone Number", QuestionType.UNWEIGHTED,],
-#     4: ["Your Email", QuestionType.UNWEIGHTED,],
 My_INFO = {"Your Gender": [QuestionType.RADIO,],
     "Your Race": [QuestionType.RADIO],
     "Your Zip Code": [QuestionType.DISTANCE],

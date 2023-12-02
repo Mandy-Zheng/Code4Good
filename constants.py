@@ -2,6 +2,18 @@
 # All non-preference questions (not included in calculation) are classified as UNWEIGHTED
 from enum import Enum
 
+list_response_questions = ["Your Additional Languages","Preferred Gender","Preferred Race","Preferred Setting","Preferred Time","Preferred Goals", "Preferred Growth Areas", "Preferred Interests", "Preferred Qualities"]
+preference_questions = ["Your Primary Language", "Preferred Gender", "Preferred Race", "Preferred Setting", "Preferred Time", "Preferred Disability", "Preferred LGBTQIA Status", "Preferred Religion", "Your Age", "Preferred Goals", "Preferred Growth Areas", "Preferred Interests", "Preferred Qualities"]
+multiselect_questions = set(["Your Education Plans", "Preferred Goals", "Preferred Growth Areas", "Preferred Interests", "Preferred Qualities"])
+
+# paring a preference question to where to find the answer
+PAIRED_QUESTIONS = {
+    "Preferred Disability": "Your Disability",
+    "Preferred LGBTQIA Status": "Your LGBTQIA Status",
+    "Preferred Gender": "Your Gender",
+    "Preferred Race": "Your Race",
+    "Preferred Religion": "Your Religion",
+}
 
 class QuestionType(Enum):
     RADIO = 1

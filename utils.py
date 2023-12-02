@@ -12,7 +12,7 @@ def radio_Equality(selectionA, selectionB):
     else:
         return 0
 
-def multiSelect_Equality(selectionA, selectionB, options):
+def multiselect_Equality(selectionA, selectionB, options):
     # selectionA, selectionB, options: lists of mentee, mentor, and all possible answer options for that question
     """
     Returns the fraction of drop down options that the mentee and the mentor selected the same value for

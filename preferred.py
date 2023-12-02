@@ -1,8 +1,5 @@
 from constants import Gender, Goals, Grow, Hobby, Languages, MentorSession, Qualities, QuestionType, Race, Times
 
-
-
-
 PREFERRED = {"Preferred Gender": [QuestionType.MULTISELECT, [Gender.MAN, Gender.WOMAN, Gender.NONBINARY]],
     "Preferred Race": [QuestionType.MULTISELECT, [Race.BLACK, Race.WHITE, Race.HISPANIC, Race.ASIAN, Race.MIDEASTERN, Race.AMERICANINDIAN]],
     "Preferred Travel Distance": [QuestionType.DISTANCE],
