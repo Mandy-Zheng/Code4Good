@@ -1,21 +1,7 @@
 from get_distance_between_zip_codes import get_distance_between_zip_codes
 
-# please update specs as necessary and modify for documentation once you finish
-
 # for each equality function return a number from 0 to 1 based on equality matching for each type of question
 
-# selectionA, selectionB --> string
-def dropdown_Equality(selectionA, selectionB):
-    """
-    If selections are the same, return 1.
-    Else, return 0
-    """
-    if selectionA == selectionB:
-        return 1
-    else:
-        return 0
-
-# selectionA, selectionB --> string
 def radio_Equality(selectionA, selectionB):
     """
     If selections are the same, return 1.
@@ -26,7 +12,6 @@ def radio_Equality(selectionA, selectionB):
     else:
         return 0
 
-# selectionA, selectionB --> set of string options
 def multiSelect_Equality(selectionA, selectionB, options):
     # selectionA, selectionB, options: lists of mentee, mentor, and all possible answer options for that question
     """
@@ -41,17 +26,6 @@ def multiSelect_Equality(selectionA, selectionB, options):
             
     return matches/len(options)
 
-# selectionA, selectionB --> num
-def slider_Equality(selectionA, selectionB):
-    """
-    Returns 1 if the selections are the same, 0 otherwise
-    """
-    if int(selectionA) == int(selectionB):
-        return 1
-    else:
-        return 0
-
-# zipA, zipB --> num
 def location_Equality(zipA, zipB, distance_pref):
     """
     Returns 1 if distance between the mentee's and mentor's zipcodes is smaller than the preferred distance, 0 otherwise
@@ -61,16 +35,34 @@ def location_Equality(zipA, zipB, distance_pref):
     else:
         return 0
     
-def language_Intersection(languagesA, languagesB):
-    for language in languagesA:
-        if language in languagesB:
+def list_Intersection(listA, listB):
+    """
+    Returns 1 if at least one item in both listA and listB
+    """
+    for item in listA:
+        if item in listB:
             return 1
     return 0
 
-def agerange_Equality(ageA, ageB):
+def similarity(listA, listB):
     """
-    ageA should be the age of the targeted person. ageB is a tuple with in the form of (preferred min age, preferred max age)
+    Returns intersection of listA and listB
     """
-    if ageA <= ageB[1] and ageA >= ageB[0]:
-        return 1
-    return 0
+    similar = []
+    for item in listA:
+        if item in listB:
+            similar.append(item)
+    return similar
+
+def is_Member(listA, item):
+    """
+    Returns 1 if item is an element of listA
+    """
+    return 1 if item in listA else 0
+
+def in_Range(num, minNum, maxNum):
+    """
+    Returns 1 if minNum <= num <= maxNum
+    """
+    return 1 if num >= minNum and num <= maxNum else 0
+        

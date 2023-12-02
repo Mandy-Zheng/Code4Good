@@ -9,7 +9,7 @@ from constants import Goals, Grow, Hobby, Languages, MentorSession, Pronouns, Qu
 #     4: ["Your Email", QuestionType.UNWEIGHTED,],
 My_INFO = {"Your Gender": [QuestionType.RADIO,],
     "Your Race": [QuestionType.RADIO],
-    "Your Zip Code": [QuestionType.UNWEIGHTED],
+    "Your Zip Code": [QuestionType.DISTANCE],
     "Preferred Setting": [QuestionType.MULTISELECT, [MentorSession.PERSON, MentorSession.VIRTUAL, MentorSession.HYBRID]], # in-person, virtual, or hybrid
     "Preferred Time": [QuestionType.MULTISELECT, [Times.WEEKDAYA, Times.WEEKDAYE, Times.WEEKENDM, Times.WEEKENDA, Times.WEEKENDE]],
     "Your Disability": [QuestionType.RADIO], #

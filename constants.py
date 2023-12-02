@@ -4,17 +4,13 @@ from enum import Enum
 
 
 class QuestionType(Enum):
-    UNWEIGHTED = 0
     RADIO = 1
     MULTISELECT = 2
-    DROPDOWN = 3
-    TEXT = 4
-    SLIDER = 5
-    PRIORITY1 = 6
-    PRIORITY2 = 7
-    PRIORITY3 = 8
-    RANGE = 9
-    DISTANCE = 10
+    RANGE = 3
+    DISTANCE = 4
+    PRIORITY1 = 5
+    PRIORITY2 = 6
+    PRIORITY3 = 7
     
 class Race(Enum):
     BLACK = "Black"
