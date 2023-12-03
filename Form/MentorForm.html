@@ -6,813 +6,851 @@
 <h1> Mentor Form</h1>
 <form>
     <br>
-    <label for="fname">First name:</label>
+    <label> First name: </label>
     <br>
-    <input type="text" id="fname" name="fname">
-    <br>
-    
-    <br>
-    <label for="lname">Last name:</label>
-    <br>
-    <input type="text" id="lname" name="lname">
-    <br>
-
-    <br>
-    <label>How do you want your mentoring relationship to primarily take place?</label><br>
-    <div>
-        <input type="checkbox" id="inPerson" name="inPerson" value="inPerson"> In Person
-    </div>
-    <div>
-        <input type="checkbox" id="virtual" name="virtual" value="Virtual"> Virtual
-    </div>
-    <div>
-        <input type="checkbox" id="hybrid" name="hybrid" value="Hybrid"> Hybrid
-    </div>
+    <input type="text" id="your-first-name" name="your-first-name">
     <br>
     
-    <label> Enter your Zip code: </label><br>
-    <input type ="number" id="zip-code" name="zip-code"><br><br>
-
-    <label> What state do you reside in? </label><br>
-
-    <select id="country-state" name="country-state">
-        <option value="">Select state</option>
-        <option value="AL">Alabama</option>
-        <option value="AK">Alaska</option>
-        <option value="AS">American Samoa</option>
-        <option value="AZ">Arizona</option>
-        <option value="AR">Arkansas</option>
-        <option value="UM-81">Baker Island</option>
-        <option value="CA">California</option>
-        <option value="CO">Colorado</option>
-        <option value="CT">Connecticut</option>
-        <option value="DE">Delaware</option>
-        <option value="DC">District of Columbia</option>
-        <option value="FL">Florida</option>
-        <option value="GA">Georgia</option>
-        <option value="GU">Guam</option>
-        <option value="HI">Hawaii</option>
-        <option value="UM-84">Howland Island</option>
-        <option value="ID">Idaho</option>
-        <option value="IL">Illinois</option>
-        <option value="IN">Indiana</option>
-        <option value="IA">Iowa</option>
-        <option value="UM-86">Jarvis Island</option>
-        <option value="UM-67">Johnston Atoll</option>
-        <option value="KS">Kansas</option>
-        <option value="KY">Kentucky</option>
-        <option value="UM-89">Kingman Reef</option>
-        <option value="LA">Louisiana</option>
-        <option value="ME">Maine</option>
-        <option value="MD">Maryland</option>
-        <option value="MA">Massachusetts</option>
-        <option value="MI">Michigan</option>
-        <option value="UM-71">Midway Atoll</option>
-        <option value="MN">Minnesota</option>
-        <option value="MS">Mississippi</option>
-        <option value="MO">Missouri</option>
-        <option value="MT">Montana</option>
-        <option value="UM-76">Navassa Island</option>
-        <option value="NE">Nebraska</option>
-        <option value="NV">Nevada</option>
-        <option value="NH">New Hampshire</option>
-        <option value="NJ">New Jersey</option>
-        <option value="NM">New Mexico</option>
-        <option value="NY">New York</option>
-        <option value="NC">North Carolina</option>
-        <option value="ND">North Dakota</option>
-        <option value="MP">Northern Mariana Islands</option>
-        <option value="OH">Ohio</option>
-        <option value="OK">Oklahoma</option>
-        <option value="OR">Oregon</option>
-        <option value="UM-95">Palmyra Atoll</option>
-        <option value="PA">Pennsylvania</option>
-        <option value="PR">Puerto Rico</option>
-        <option value="RI">Rhode Island</option>
-        <option value="SC">South Carolina</option>
-        <option value="SD">South Dakota</option>
-        <option value="TN">Tennessee</option>
-        <option value="TX">Texas</option>
-        <option value="UM">United States Minor Outlying Islands</option>
-        <option value="VI">United States Virgin Islands</option>
-        <option value="UT">Utah</option>
-        <option value="VT">Vermont</option>
-        <option value="VA">Virginia</option>
-        <option value="UM-79">Wake Island</option>
-        <option value="WA">Washington</option>
-        <option value="WV">West Virginia</option>
-        <option value="WI">Wisconsin</option>
-        <option value="WY">Wyoming</option>
-    </select>
+    <br>
+    <label> Last name: </label>
+    <br>
+    <input type="text" id="your-last-name" name="your-last-name">
     <br>
 
     <br>
-    <label> What county do you reside in? </label><br>
-    <select id="county">
-        <option value="">Select county</option>
-        <option value="Barnstable">Barnstable</option>
-        <option value="Berkshire">Berkshire</option>
-        <option value="Bristol">Bristol</option>
-        <option value="Dukes">Dukes</option>
-        <option value="Essex">Essex</option>
-        <option value="Franklin">Franklin</option>
-        <option value="Hampden">Hampden</option>
-        <option value="Hampshire">Hampshire</option>
-        <option value="Middlesex">Middlesex</option>
-        <option value="Nantucket">Nantucket</option>
-        <option value="Norfolk">Norfolk</option>
-        <option value="Plymouth">Plymouth</option>
-        <option value="Suffolk">Suffolk</option>
-        <option value="Worcester">Worcester</option>
-    </select>
-    <br>
-
-    <br>
-    <label> How far are you willing to travel (if in person or hybrid)? </label>
-    <br>
-    <input type="range" min="0" max="100" step="5" value="0" id="slider">
-    <span id="sliderValue">0 miles</span>
-
-    <script>
-        const slider = document.getElementById('slider');
-        const sliderValue = document.getElementById('sliderValue');
-
-        // Initialize the displayed value
-        sliderValue.textContent = slider.value + ' miles';
-
-        // Update the value when the slider is moved
-        slider.addEventListener('input', () => {
-            sliderValue.textContent = slider.value + ' miles';
-        });
-    </script>
-    <br> 
-
-    <br>
-    <label> When are you available to meet with your mentee? </label>
+    <label> Select your gender. </label>
     <div> 
-        <input type="checkbox" id="option1" name="Weekday afternoons" value="Weekday afternoons"> Weekday afternoons
+        <input type="radio" id="your-gender-1" name="your-gender" value="Man"> 
+        <label for="your-gender-1">Man</label>
     </div>
     <div>
-        <input type="checkbox" id="option2" name="Weekday evenings" value="Weekday evenings"> Weekday evenings
+        <input type="radio" id="your-gender-2" name="your-gender" value="Woman">
+        <label for="your-gender-2">Woman</label>
     </div>
     <div>
-        <input type="checkbox" id="option3" name="Weekend mornings" value="Weekend mornings"> Weekend mornings
+        <input type="radio" id="your-gender-3" name="your-gender" value="Nonbinary">
+        <label for="your-gender-3">Nonbinary</label>
     </div>
-    <div>
-        <input type="checkbox" id="option4" name="Weekend afternoons" value="Weekend afternoons"> Weekend afternoons
-    </div>
-    <div>
-        <input type="checkbox" id="option4" name="Weekend evenings" value="Weekend evenings"> Weekend evenings
-    </div>
-    <br>
 
     <br>
-    <label> What is your primary language? </label>
-        <br>
-        <label>
-            <input type="radio" name="language" value="English"> English
-        </label><br>
-        
-        <label>
-            <input type="radio" name="language" value="Spanish"> Spanish
-        </label><br>
-        
-        <label>
-            <input type="radio" name="language" value="Portuguese"> Portuguese
-        </label><br>
-        
-        <label>
-            <input type="radio" name="language" value="Cantonese"> Cantonese
-        </label><br>
-        
-        <label>
-            <input type="radio" name="language" value="Mandarin"> Mandarin
-        </label><br>
-        
-        <label>
-            <input type="radio" name="language" value="French"> French
-        </label><br>
-        
-        <label>
-            <input type="radio" name="language" value="Haitian Creole"> Haitian Creole
-        </label><br>
-        
-        <label>
-            <input type="radio" name="language" value="American Sign Language"> American Sign Language
-        </label><br>
-        
-        <label>
-            <input type="checkbox" name="languages" value="Other" id="otherCheckbox"> Other: 
-        </label>
-        <input type="text" name="otherLanguage" id="otherLanguageInput" disabled>
-    
-        <input type="submit" value="Submit">
-    <br>
-    
-    <br>
-    <p> What languages other than English do you speak fluently? </p>
- 
-        <legend>Check all that apply</legend>
-        <label>
-            <input type="checkbox" name="languages" value="English"> English
-        </label><br>
-        <label>
-            <input type="checkbox" name="languages" value="Spanish"> Spanish
-        </label><br>
-        <label>
-            <input type="checkbox" name="languages" value="Portuguese"> Portuguese
-        </label><br>
-        <label>
-            <input type="checkbox" name="languages" value="Cantonese"> Cantonese
-        </label><br>
-        <label>
-            <input type="checkbox" name="languages" value="Mandarin"> Mandarin
-        </label><br>
-        <label>
-            <input type="checkbox" name="languages" value="French"> French
-        </label><br>
-        <label>
-            <input type="checkbox" name="languages" value="Haitian Creole"> Haitian Creole
-        </label><br>
-        <label>
-            <input type="checkbox" name="languages" value="American Sign Language"> American Sign Language
-        </label><br>
-        <label>
-            <input type="checkbox" name="languages" value="Other" id="otherCheckbox"> Other: 
-        </label>
-        <input type="text" name="otherLanguage" id="otherLanguageInput" disabled>
-    <input type="submit" value="Submit">
-    
-    <script>
-        const otherCheckbox = document.getElementById('otherCheckbox');
-        const otherLanguageInput = document.getElementById('otherLanguageInput');
-    
-        otherCheckbox.addEventListener('change', () => {
-            otherLanguageInput.disabled = !otherCheckbox.checked;
-            if (!otherCheckbox.checked) {
-                otherLanguageInput.value = '';
-            }
-        });
-    </script>
-    
-    
-    <h2> Demographic Questions </h2>
-    <br>
-    <label> Enter your Date of Birth </label> 
-    <br>
-    <input type="date" id="dob" name="dob" required>
-    <br>
-
-    <br>
-    <label> Select your gender </label>
+    <label> What are your pronouns? </label>
     <div> 
-        <input type="checkbox" id="option1" name="Man" value="Man"> Man
+        <input type="checkbox" id="your-pronoun-1" name="your-pronoun" value="He">
+        <label for="your-pronoun-1">He</label>
     </div>
     <div>
-        <input type="checkbox" id="option2" name="Woman" value="Woman"> Woman
+        <input type="checkbox" id="your-pronoun-2" name="your-pronoun" value="She"> 
+        <label for="your-pronoun-2">She</label>
     </div>
     <div>
-        <input type="checkbox" id="option3" name="Nonbinary" value="Nonbinary"> Nonbinary
-    <br> 
-
-    <br>
-    <label> Select your preferred gender for your mentees </label>
-    <div> 
-        <input type="checkbox" id="option1" name="Man" value="Man"> Man
+        <input type="checkbox" id="your-pronoun-3" name="your-pronoun" value="They">
+        <label for="your-pronoun-3">They</label>
     </div>
     <div>
-        <input type="checkbox" id="option2" name="Woman" value="Woman"> Woman
+        <input type="checkbox" id="your-pronoun-4" name="your-pronoun" value="Other">
+        <label for="your-pronoun-4">Other</label>
     </div>
-    <div>
-        <input type="checkbox" id="option3" name="Nonbinary" value="Nonbinary"> Nonbinary
-    <br>
-
-    <br>
-    <label> Select your race/ethnicity </label>
-    <div>
-        <input type="checkbox" id="option4" name="Black" value="Black"> Black
-    </div>
-    <div>
-        <input type="checkbox" id="option5" name="White" value="White"> White
-    </div>
-    <div>
-        <input type="checkbox" id="option6" name="Hispanic/Latinx" value="Hispanic/Latinx"> Hispanic/Latinx
-    </div>
-    <div>
-        <input type="checkbox" id="option7" name="Asian" value="Asian"> Asian
-    </div>
-    <div>
-        <input type="checkbox" id="option8" name="Middle Eastern" value="Middle Eastern"> Middle Eastern
-    </div>
-    <div>
-        <input type="checkbox" id="option9" name="American Indian" value="American Indian"> American Indian
-    </div>
-    <br>
-
-    <br>
-    <label> Select your preferred race/ethnicity for your mentee </label>
-    <div>
-        <input type="checkbox" id="option4" name="Black" value="Black"> Black
-    </div>
-    <div>
-        <input type="checkbox" id="option5" name="White" value="White"> White
-    </div>
-    <div>
-        <input type="checkbox" id="option6" name="Hispanic/Latinx" value="Hispanic/Latinx"> Hispanic/Latinx
-    </div>
-    <div>
-        <input type="checkbox" id="option7" name="Asian" value="Asian"> Asian
-    </div>
-    <div>
-        <input type="checkbox" id="option8" name="Middle Eastern" value="Middle Eastern"> Middle Eastern
-    </div>
-    <div>
-        <input type="checkbox" id="option9" name="American Indian" value="American Indian"> American Indian
-    <br>
-
-    <br>
-    <label> Up to what education level do you feel comfortable supporting a mentee? </label>
-    <div>
-        <input type="radio" id="option1" name="education" value="High school">
-        <label for="option1">High school</label>
-    </div>
-    <div>
-        <input type="radio" id="option2" name="education" value="College">
-        <label for="option2">College</label>
-    </div>
-    <div>
-        <input type="radio" id="option3" name="education" value="Trade school">
-        <label for="option3">Trade school</label>
-    </div>
-    <div>
-        <input type="radio" id="option4" name="education" value="Working">
-        <label for="option4">Working</label>
-    </div>
-    
-    <br> 
-
-    <br>
-    <label> Do you have a disability? </label>
-    <div>
-        <input type="radio" id="option1" name="disability" value="Yes"> Yes
-    </div>
-    <div>
-        <input type="radio" id="option2" name="disability" value="No"> No
-    </div>
-    <br>
-
-    <br>
-    <label> Tell us about your disability. </label>
-    <br>
-    <textarea id="userText" name="userText" rows="5" cols="50"></textarea>
-    <br>
-
-    <br>
-    <label> Do you want a mentee with a similar disability to yours? </label>
-    <div>
-        <input type="radio" id="option1" name="disability" value="Yes"> Yes
-    </div>
-    <div>
-        <input type="radio" id="option2" name="disability" value="No"> No
-    </div>
-    <div>
-        <input type="radio" id="option3" name="disability" value="Doesn't Matter"> Doesn't Matter
-    </div>
-    <br>
-
-    <br>
-    <label> Do you want to elaborate/describe your disability? </label>
-    <div>
-        <input type="radio" name="answer" value="yes" onchange="showTextBox()"> Yes
-    </div>
-    <div>
-        <input type="radio" name="answer" value="no" onchange="showTextBox()"> No 
-    </div>
-    <br>
-
-    <div id="text-box" style="display: none;">
-      <label for="text">Describe your disability:</label>
-      <br>
-      <textarea id="text" name="text" rows="4" cols="50" style="font-size: 16px;"></textarea>
-    </div>
-
-    <script>
-        function showTextBox() {
-          var answer = document.querySelector('input[name="answer"]:checked').value;
-          var textBox = document.getElementById('text-box');
-    
-          if (answer === 'yes') {
-            textBox.style.display = 'block';
-          } else {
-            textBox.style.display = 'none';
-          }
-        }
-      </script>
 
     <br>
     <label> Do you identify as a member of the LGBTQIA+ Community? </label>
     <div>
-        <input type="radio" id="option1" name="lgtbq" value="Yes"> Yes
+        <input type="radio" id="your-LGBTQIA-status-1" name="your-lgtbqia-status" value="Yes">
+        <label for="your-LGBTQIA-status-1">Yes</label>
     </div>
     <div>
-        <input type="radio" id="option2" name="lgtbq" value="No"> No
+        <input type="radio" id="your-LGBTQIA-status-2" name="your-lgtbqia-status" value="No">
+        <label for="your-LGBTQIA-status-2">No</label>
     </div>
+
+    <br>
+    <label> Select your race/ethnicity. </label>
+    <div>
+        <input type="checkbox" id="your-race-1" name="your-race" value="Black">
+        <label for="your-race-1">Black</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-race-2" name="your-race" value="White">
+        <label for="your-race-2">White</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-race-3" name="your-race" value="Hispanic/Latinx">
+        <label for="your-race-3">Hispanic/Latinx</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-race-4" name="your-race" value="Asian">
+        <label for="your-race-4">Asian</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-race-5" name="your-race" value="Middle Eastern">
+        <label for="your-race-5">Middle Eastern</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-race-6" name="your-race" value="American Indian">
+        <label for="your-race-6">American Indian</label>
+    </div>
+
+    <br>
+    <label> Enter your date of birth: </label> 
+    <br>
+    <input type="date" id="your-dob" name="your-dob" required>
+    <br>
+
+    <br>
+    <label> Enter your age: </label>
+    <br>
+    <input type="number" id="your-age" name="your-age" required>
     <br>
 
     <br> 
-    <label> Do you want an LGBTQIA+ mentee? </label>
-    <div>
-        <input type="radio" id="option1" name="lgtbq" value="Yes"> Yes
-    </div>
-    <div>
-        <input type="radio" id="option2" name="lgtbq" value="No"> No
-    </div>
-    <div> 
-        <input type="radio" id="option2" name="lgtbq" value="Doesn't matter"> Doesn't matter
-    </div>
+    <label> Enter your employer: </label>
+    <br>
+    <input type="text" id="your-employer" name="your-employer">
     <br>
 
     <br>
-    <label> Do you want to disclose religion? (optional) </label>
+    <label> Household Income: </label>
+    <br>
+    <select id="your-income" name="your-income">
+        <option value="under_20k">Under $10,000</option>
+        <option value="20k_40k">$10,000 - $24,999</option>
+        <option value="40k_60k">$25,000 - $49,999</option>
+        <option value="60k_80k">$50,000 - $74,999</option>
+        <option value="80k_100k">75,000 - $99,999</option>
+        <option value="100k_150k">$100,000 - $124,999</option>
+        <option value="150k_200k">$125,000 - $149,999</option>
+        <option value="over_200k">Over $150,000</option>
+    </select>
+    <br>
+
+    <br>
+    <label> Enter your zip code: </label>
+    <br>
+    <input type ="number" id="your-zip-code" name="your-zip-code"><br>
+    <br>
+
+    <label>Select the category that best describes your disability.</label>
+
     <div>
-        <input type="radio" id="option1" name="religion" value="Christianity"> Christianity
+        <input type="radio" id="your-disability-1" name="your-disability" value="Mental Health">
+        <label for="your-disability-1">Mental Health</label>
+    </div>
+
+    <div>
+        <input type="radio" id="your-disability-2" name="your-disability" value="Developmental Disabilities">
+        <label for="your-disability-2">Developmental Disabilities</label>
+    </div>
+
+    <div>
+        <input type="radio" id="your-disability-3" name="your-disability" value="Intellectual Disabilities">
+        <label for="your-disability-3">Intellectual Disabilities</label>
+    </div>
+
+    <div>
+        <input type="radio" id="your-disability-4" name="your-disability" value="Learning Disabilities">
+        <label for="your-disability-4">Learning Disabilities</label>
+    </div>
+
+    <div>
+        <input type="radio" id="your-disability-5" name="your-disability" value="Communication Disabilities">
+        <label for="your-disability-5">Communication Disabilities</label>
+    </div>
+
+    <div>
+        <input type="radio" id="your-disability-6" name="your-disability" value="Physical Disabilities">
+        <label for="your-disability-6">Physical Disabilities</label>
+    </div>
+
+    <div>
+        <input type="radio" id="your-disability-7" name="your-disability" value="Sensory Disabilities">
+        <label for="your-disability-7">Sensory Disabilities</label>
+    </div>
+
+    <div>
+        <input type="radio" id="your-disability-8" name="your-disability" value="No Disability">
+        <label for="your-disability-8">No Disability</label>
+    </div>
+
+
+    <br>
+    <label> What is your primary language? </label>
+    <br>    
+    <div>
+        <input type="radio" id="your-language-1" name="your-language" value="English">
+        <label for="your-language-1">English</label>
     </div>
     <div>
-        <input type="radio" id="option2" name="religion" value="Judaism"> Judaism
+        <input type="radio" id="your-language-2" name="your-language" value="Spanish">
+        <label for="your-language-2">Spanish</label>
     </div>
     <div>
-        <input type="radio" id="option3" name="religion" value="Islam"> Islam
+        <input type="radio" id="your-language-3" name="your-language-3" value="Portuguese">
+        <label for="your-language-3">Portuguese</label>
     </div>
     <div>
-        <input type="radio" id="option4" name="religion" value="Hinduism"> Hinduism
+        <input type="radio" id="your-language-4" name="your-language" value="Cantonese">
+        <label for="your-language-4">Cantonese</label>
     </div>
+    <div>
+        <input type="radio" id="your-language-5" name="your-language" value="Mandarin">
+        <label for="your-language-5">Mandarin</label>
+    </div>
+    <div>
+        <input type="radio" id="your-language-6" name="your-language" value="French">
+        <label for="your-language-6">French</label>
+    </div>
+    <div>
+        <input type="radio" id="your-language-7" name="your-language" value="Haitian Creole">
+        <label for="your-language-7">Haitian Creole</label>
+    </div>
+    <div>
+        <input type="radio" id="your-language-8" name="your-language" value="American Sign Language">
+        <label for="your-language-8">American Sign Language</label>
+    </div>
+    <div>
+        <input type="radio" id="your-language-9" name="your-language" value="Other">
+        <label for="your-language-9">Other</label>
+    </div>
+    
+    <br>
+    <label> What languages other than English do you speak fluently? </label>
+    <br>
+    <div>
+        <input type="checkbox" id="your-additional-languages-1" name="your-additional-languages" value="Spanish">
+        <label for="your-additional-languages-1">Spanish</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-additional-languages-2" name="your-additional-languages" value="Portuguese">
+        <label for="your-additional-languages-2">Portuguese</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-additional-languages-3" name="your-additional-languages" value="Cantonese">
+        <label for="your-additional-languages-3">Cantonese</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-additional-languages-4" name="your-additional-languages" value="Mandarin">
+        <label for="your-additional-languages-4">Mandarin</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-additional-languages-5" name="your-additional-languages" value="French">
+        <label for="your-additional-languages-5">French</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-additional-languages-6" name="your-additional-languages" value="Haitian Creole">
+        <label for="your-additional-languages-6">Haitian Creole</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-additional-languages-7" name="your-additional-languages" value="American Sign Language">
+        <label for="your-additional-languages-7">American Sign Language</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-additional-languages-8" name="your-additional-languages" value="Other">
+        <label for="your-additional-languages-8">Other</label>
+    </div>
+
+    <br>
+    <label>Do you want to disclose religion?</label>
+    <br>
+    <div>
+        <input type="radio" id="your-religion-1" name="your-religion" value="Christianity">
+        <label for="your-religion-1">Christianity</label>
+    </div>
+    <div>
+        <input type="radio" id="your-religion-2" name="your-religion" value="Judaism">
+        <label for="your-religion-2">Judaism</label>
+    </div>
+    <div>
+        <input type="radio" id="your-religion-3" name="your-religion" value="Islam">
+        <label for="your-religion-3">Islam</label>
+    </div>
+    <div>
+        <input type="radio" id="your-religion-4" name="your-religion" value="Hinduism">
+        <label for="your-religion-4">Hinduism</label>
+    </div>
+    <div>
+        <input type="radio" id="your-religion-5" name="your-religion" value="Jainism">
+        <label for="your-religion-5">Jainism</label>
+    </div>
+    <div>
+        <input type="radio" id="your-religion-6" name="your-religion" value="Sikhism">
+        <label for="your-religion-6">Sikhism</label>
+    </div>
+    <div>
+        <input type="radio" id="your-religion-7" name="your-religion" value="Buddhism">
+        <label for="your-religion-7">Buddhism</label>
+    </div>
+    <div>
+        <input type="radio" id="your-religion-8" name="your-religion" value="Shintoism">
+        <label for="your-religion-8">Shintoism</label>
+    </div>
+    <div>
+        <input type="radio" id="your-religion-9" name="your-religion" value="Other">
+        <label for="your-religion-9">Other</label>
+    </div>
+    <div>
+        <input type="radio" id="your-religion-10" name="your-religion" value="N/A">
+        <label for="your-religion-10">I do not wish to disclose</label>
+    </div>
+
+    <br>
+    <label> Select up to 5 qualities that you feel best describe you. </label>
+    <br>
+    <div>
+        <input type="checkbox" id="your-qualities-1" name="your-qualities" value="Funny">
+        <label for="your-qualities-1">Funny</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-qualities-2" name="your-qualities" value="Serious thinker">
+        <label for="your-qualities-2">Serious thinker</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-qualities-3" name="your-qualities" value="Ambitious">
+        <label for="your-qualities-3">Ambitious</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-qualities-4" name="your-qualities" value="Scientific">
+        <label for="your-qualities-4">Scientific</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-qualities-5" name="your-qualities" value="Likes to dream">
+        <label for="your-qualities-5">Likes to dream</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-qualities-6" name="your-qualities" value="Courageous">
+        <label for="your-qualities-6">Courageous</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-qualities-7" name="your-qualities" value="Relaxed">
+        <label for="your-qualities-7">Relaxed</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-qualities-8" name="your-qualities" value="Supportive">
+        <label for="your-qualities-8">Supportive</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-qualities-9" name="your-qualities" value="Great public speaker/outgoing">
+        <label for="your-qualities-9">Great public speaker/outgoing</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-qualities-10" name="your-qualities" value="Confident">
+        <label for="your-qualities-10">Confident</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-qualities-11" name="your-qualities" value="Social">
+        <label for="your-qualities-11">Social</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-qualities-12" name="your-qualities" value="Introverted/Shy">
+        <label for="your-qualities-12">Introverted/Shy</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-qualities-13" name="your-qualities" value="Experience (In career or field of study)">
+        <label for="your-qualities-13">Experience (In career or field of study)</label>
+    </div>
+    <div>
+        <input type="checkbox" id="your-qualities-14" name="your-qualities" value="Studious">
+        <label for="your-qualities-14">Studious</label>
+    </div>
+
+    <h2> Demographic Questions </h2>
+
+    <label> Select your preferred gender for your mentee. </label>
     <div> 
-        <input type="radio" id="option5" name="religion" value="Jainism"> Jainism
-    </div>
-    <div> 
-        <input type="radio" id="option6" name="religion" value="Sikhism"> Sikhism
-    </div>
-    <div> 
-        <input type="radio" id="option7" name="religion" value="Buddhism"> Buddhism
+        <input type="checkbox" id="preferred-gender-1" name="preferred-gender" value="Man"> 
+        <label for="preferred-gender-1">Man</label>
     </div>
     <div>
-        <input type="radio" id="option8" name="religion" value="Shintoism"> Shintoism
-    </div> 
-    <div> 
-        <input type="radio" id="option9" name="religion" value="Other"> Other
+        <input type="checkbox" id="preferred-gender-2" name="preferred-gender" value="Woman">
+        <label for="preferred-gender-2">Woman</label>
     </div>
+    <div>
+        <input type="checkbox" id="preferred-gender-3" name="preferred-gender" value="Nonbinary">
+        <label for="preferred-gender-3">Nonbinary</label>
+    <br>
+
+
+    <br>
+    <label>Select your preferred race/ethnicity for your mentee.</label>
+    <div>
+        <input type="checkbox" id="preferred-race-1" name="preferred-race" value="Black"> 
+        <label for="preferred-race-1">Black</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-race-2" name="preferred-race" value="White"> 
+        <label for="preferred-race-2">White</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-race-3" name="preferred-race" value="Hispanic/Latinx"> 
+        <label for="preferred-race-3">Hispanic/Latinx</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-race-4" name="preferred-race" value="Asian"> 
+        <label for="preferred-race-4">Asian</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-race-5" name="preferred-race" value="Middle Eastern"> 
+        <label for="preferred-race-5">Middle Eastern</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-race-6" name="preferred-race" value="American Indian"> 
+        <label for="preferred-race-6">American Indian</label>
+    <br>
+
+    <br>
+    <label>How far are you willing to travel (in miles)?</label>
+    <input type="number" id="preferred-travel-distance" min="0" step="5">
     <br> 
 
     <br>
-    <label> Do you want someone with a similar religion to yours? (if previous question was answered) </label>
+    <label>How do you want your mentoring relationship to primarily take place?</label><br>
     <div>
-        <input type="radio" id="option1" name="religion" value="Yes"> Yes
+        <input type="checkbox" id="preferred-setting-1" name="preferred-setting" value="In Person"> 
+        <label for="preferred-setting-1">In Person</label>
     </div>
     <div>
-        <input type="radio" id="option2" name="religion" value="No"> No
+        <input type="checkbox" id="preferred-setting-2" name="preferred-setting" value="Virtual">
+        <label for="preferred-setting-2">Virtual</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-setting-3" name="preferred-setting" value="Hybrid">
+        <label for="preferred-setting-3">Hybrid</label>
+    </div>
+
+    <br>
+    <label>When are you available to meet with your mentee?</label>
+    <div>
+        <input type="checkbox" id="preferred-time-1" name="preferred-time" value="Weekday afternoons">
+        <label for="preferred-time-1">Weekday afternoons</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-time-2" name="preferred-time" value="Weekday evenings">
+        <label for="preferred-time-2">Weekday evenings</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-time-3" name="preferred-time" value="Weekend mornings">
+        <label for="preferred-time-3">Weekend mornings</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-time-4" name="preferred-time" value="Weekend afternoons">
+        <label for="preferred-time-4">Weekend afternoons</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-time-5" name="preferred-time" value="Weekend evenings">
+        <label for="preferred-time-5">Weekend evenings</label>
+    </div>
+
+    <br>
+    <label> Up to what education level do you feel comfortable supporting a mentee? </label>
+    <div>
+        <input type="checkbox" id="preferred-education-plans-1" name="preferred-education-plans" value="High School"> High School
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-education-plans-2" name="preferred-education-plans" value="College"> College
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-education-plans-3" name="preferred-education-plans" value="Trade School"> Trade School
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-education-plans-4" name="preferred-education-plans" value="Working"> Working
     </div>
     <div> 
-        <input type="radio" id="option2" name="religion" value="Doesn't matter"> Doesn't matter
-    <br>
+        <input type="checkbox" id="preferred-education-plans-5" name="preferred-education-plans" value="Not a Student"> Not a Student
+    </div>
 
     <br>
-    <label> What age range do you want your mentee to be? </label>
-    <br>
-    <input type="range" id="age" name="age" min="6" max="22" value="6">
-    <span id="ageValue">6 years old</span>
-
-    <script>
-        const ageSlider = document.getElementById("age");
-        const ageValue = document.getElementById("ageValue");
-
-        ageSlider.addEventListener("input", function() {
-            ageValue.textContent = this.value + " " + "years old";
-        });
-    </script>
-    <br>
-
-    <h2> Lifestyle and Mentoring Program Choice Questions </h2> 
+    <label>Do you want a mentor with a similar disability to yours?</label>
+    <div>
+        <input type="radio" id="preferred-disability-1" name="preferred-disability" value="Yes">
+        <label for="preferred-disability-1">Yes</label>
+    </div>
+    <div>
+        <input type="radio" id="preferred-disability-2" name="preferred-disability" value="No">
+        <label for="preferred-disability-2">No</label>
+    </div>
+    <div>
+        <input type="radio" id="preferred-disability-3" name="preferred-disability" value="Doesn't Matter">
+        <label for="preferred-disability-3">Doesn't Matter</label>
+    </div>
 
     <br>
+    <label>Do you want an LGBTQIA+ mentee?</label>
+    <div>
+        <input type="radio" id="preferred-LGBTQIA-status-1" name="preferred-LGBTQIA-status" value="Yes">
+        <label for="preferred-LGBTQIA-status-1">Yes</label>
+    </div>
+    <div>
+        <input type="radio" id="preferred-LGBTQIA-status-2" name="preferred-LGBTQIA-status" value="No">
+        <label for="preferred-LGBTQIA-status-2">No</label>
+    </div>
+    <div>
+        <input type="radio" id="preferred-LGBTQIA-status-3" name="preferred-LGBTQIA-status" value="Doesn't matter">
+        <label for="preferred-LGBTQIA-status-3">Doesn't matter</label>
+    </div>
+
+    <br>
+    <label>Do you want someone with a similar religion to yours?</label>
+    <div>
+        <input type="radio" id="preferred-religion-1" name="preferred-religion" value="Yes">
+        <label for="preferred-religion-1">Yes</label>
+    </div>
+    <div>
+        <input type="radio" id="preferred-religion-2" name="preferred-religion" value="No">
+        <label for="preferred-religion-2">No</label>
+    </div>
+    <div>
+        <input type="radio" id="preferred-religion-3" name="preferred-religion" value="Doesn't matter">
+        <label for="preferred-religion-3">Doesn't matter</label>
+    </div>
+
+    <br>
+    <label>What is the minimum age (years old) that you want your mentee to be?</label>
+    <br>
+    <input type="number" min="6" max="22">
+    <br>
+
+    <br> 
+    <label>What is the maximum age (years old) that you want your mentee to be?</label>
+    <br>
+    <input type="number" min="6" max="22">
+    <br>
+
+    <h2>Mentoring Style</h2>
+    
     <label> What mentee goals for this mentorship relationship do you feel comfortable supporting? </label>
     <div>
-        <input type="checkbox" id="option1" name="interests" value="Make a friend"> Make a friend
+        <input type="checkbox" id="preferred-goals-1" name="preferred-goals" value="Make a friend">
+        <label for="preferred-goals-1">Make a friend</label>
     </div>
     <div>
-        <input type="checkbox" id="option2" name="interests" value="Have someone help me feel more independent"> Have someone help me feel more independent
+        <input type="checkbox" id="preferred-goals-2" name="preferred-goals" value="Have someone help me feel more independent">
+        <label for="preferred-goals-2">Have someone help me feel more independent</label>
     </div>
     <div>
-        <input type="checkbox" id="option3" name="interests" value="Provide me with career and school advice"> Provide me with career and school advice
+        <input type="checkbox" id="preferred-goals-3" name="preferred-goals" value="Provide me with career and school advice">
+        <label for="preferred-goals-3">Provide me with career and school advice</label>
     </div>
     <div>
-        <input type="checkbox" id="option4" name="interests" value="Learn a new skill"> Learn a new skill 
+        <input type="checkbox" id="preferred-goals-4" name="preferred-goals" value="Learn a new skill">
+        <label for="preferred-goals-4">Learn a new skill</label>
     </div>
     <div>
-        <input type="checkbox" id="option5" name="interests" value="Explore the community"> Explore the community 
+        <input type="checkbox" id="preferred-goals-5" name="preferred-goals" value="Explore the community">
+        <label for="preferred-goals-5">Explore the community</label>
     </div>
     <div>
-        <input type="checkbox" id="option6" name="interests" value="Do fun activities"> Do fun activities
+        <input type="checkbox" id="preferred-goals-6" name="preferred-goals" value="Do fun activities">
+        <label for="preferred-goals-6">Do fun activities</label>
     </div>
     <div>
-        <input type="checkbox" id="option7" name="interests" value="Share a hobby"> Share a hobby
+        <input type="checkbox" id="preferred-goals-7" name="preferred-goals" value="Share a hobby">
+        <label for="preferred-goals-7">Share a hobby</label>
     </div>
     <div>
-        <input type="checkbox" id="option8" name="interests" value="Have someone to talk to"> Have someone to talk to
-    </div>
-    <br>
-    
-    <br>
-    <label> What are some areas of growth I can support my mentee through? </label>
-    
-    <div>
-        <input type="checkbox" id="option1" name="interests" value="Do better in school"> Do better in school
-    </div>
-    <div>
-        <input type="checkbox" id="option2" name="interests" value="Be a better listener"> Be a better listener
-    </div>
-    <div>
-        <input type="checkbox" id="option3" name="interests" value="Have more confidence"> Have more confidence
-    </div>
-    <div>
-        <input type="checkbox" id="option4" name="interests" value="Gain work skills"> Gain work skills
-    </div>
-    <div>
-        <input type="checkbox" id="option5" name="interests" value="Gain people skills"> Gain people skills
-    </div>
-    <div>
-        <input type="checkbox" id="option6" name="interests" value="Be funnier"> Be funnier
-    </div>
-    <div>
-        <input type="checkbox" id="option7" name="interests" value="Be more organized"> Be more organized
-    </div>
-    <div>
-        <input type="checkbox" id="option8" name="interests" value="Learn a skill or hobby"> Learn a skill or hobby
-    </div>
-    <div>
-        <input type="checkbox" id="option9" name="interests" value="Get along better with others (including my parents/siblings)"> Get along better with others (including my parents/siblings)
-    </div>
-    <div>
-        <input type="checkbox" id="option10" name="interests" value="Feel less anxious about meeting new people or going new places"> Feel less anxious about meeting new people or going new places
-    </div>
-    <div>
-        <input type="checkbox" id="option11" name="interests" value="Manage my time better"> Manage my time better
-    </div>
-    <div>
-        <input type="checkbox" id="option12" name="interests" value="Get out of my comfort zone"> Get out of my comfort zone
-    </div>
-    <div>
-        <input type="checkbox" id="option13" name="interests" value="Learn to make or save money"> Learn to make or save money
-    </div>
-    <div>
-        <input type="checkbox" id="option14" name="interests" value="Be less self-conscious about myself"> Be less self-conscious about myself
-    </div>
-    <div>
-        <input type="checkbox" id="option15" name="interests" value="Understand other perspectives better"> Understand other perspectives better
-    </div>
-    <div>
-        <input type="checkbox" id="option16" name="interests" value="Trusting my mentor"> Trusting my mentor
-    </div>
-    <div>
-        <input type="checkbox" id="option17" name="interests" value="Going to public places"> Going to public places
-    </div>
-    <div>
-        <input type="checkbox" id="option18" name="interests" value="Showing up to meetings on time"> Showing up to meetings on time
-    </div>
-    <div>
-        <input type="checkbox" id="option19" name="interests" value="Be a better listener"> Be a better listener
-    </div>
-    <div>
-        <input type="checkbox" id="option20" name="interests" value="Have more confidence"> Have more confidence
+        <input type="checkbox" id="preferred-goals-8" name="preferred-goals" value="Have someone to talk to">
+        <label for="preferred-goals-8">Have someone to talk to</label>
     </div>
 
-    
-    <br> 
+    <br>
+    <label>What are some areas of growth I can support my mentee through?</label>
+    <div>
+        <input type="checkbox" id="preferred-growth-areas-1" name="preferred-growth-areas" value="Do better in school">
+        <label for="preferred-growth-areas-1">Do better in school</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-growth-areas-2" name="preferred-growth-areas" value="Be a better listener">
+        <label for="preferred-growth-areas-2">Be a better listener</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-growth-areas-3" name="preferred-growth-areas" value="Have more confidence">
+        <label for="preferred-growth-areas-3">Have more confidence</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-growth-areas-4" name="preferred-growth-areas" value="Gain work skills">
+        <label for="preferred-growth-areas-4">Gain work skills</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-growth-areas-5" name="preferred-growth-areas" value="Gain people skills">
+        <label for="preferred-growth-areas-5">Gain people skills</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-growth-areas-6" name="preferred-growth-areas" value="Be funnier">
+        <label for="preferred-growth-areas-6">Be funnier</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-growth-areas-7" name="preferred-growth-areas" value="Be more organized">
+        <label for="preferred-growth-areas-7">Be more organized</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-growth-areas-8" name="preferred-growth-areas" value="Learn a skill or hobby">
+        <label for="preferred-growth-areas-8">Learn a skill or hobby</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-growth-areas-9" name="preferred-growth-areas" value="Get along better with others (including my parents/siblings)">
+        <label for="preferred-growth-areas-9">Get along better with others (including my parents/siblings)</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-growth-areas-10" name="preferred-growth-areas" value="Feel less anxious about meeting new people or going new places">
+        <label for="preferred-growth-areas-10">Feel less anxious about meeting new people or going new places</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-growth-areas-11" name="preferred-growth-areas" value="Manage my time better">
+        <label for="preferred-growth-areas-11">Manage my time better</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-growth-areas-12" name="preferred-growth-areas" value="Get out of my comfort zone">
+        <label for="preferred-growth-areas-12">Get out of my comfort zone</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-growth-areas-13" name="preferred-growth-areas" value="Learn to make or save money">
+        <label for="preferred-growth-areas-13">Learn to make or save money</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-growth-areas-14" name="preferred-growth-areas" value="Be less self-conscious about myself">
+        <label for="preferred-growth-areas-14">Be less self-conscious about myself</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-growth-areas-15" name="preferred-growth-areas" value="Understand other perspectives better">
+        <label for="preferred-growth-areas-15">Understand other perspectives better</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-growth-areas-16" name="preferred-growth-areas" value="Trusting my mentor">
+        <label for="preferred-growth-areas-16">Trusting my mentor</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-growth-areas-17" name="preferred-growth-areas" value="Going to public places">
+        <label for="preferred-growth-areas-17">Going to public places</label>
+    </div>
+    <div>
+        <input type="checkbox" id="preferred-growth-areas-18" name="preferred-growth-areas" value="Showing up to meetings on time">
+        <label for="preferred-growth-areas-18">Showing up to meetings on time</label>
+    </div>
+
 
     <br>
-    <label> Select 5 or more hobbies and interests from the following list that appeal to you and you would be willing to share with the mentee. </label>
-  
+    <label> Select 5 or more hobbies and interests from the following list that appeal to you and you would be willing to share with your mentee. </label>
     <div>
-        <input type="checkbox" id="option21" name="interests" value="Animals/Going to Zoo"> Animals/Going to Zoo
+        <input type="checkbox" id="preferred-interests-1" name="preferred-interests" value="Animals/Going to Zoo">
+        <label for="preferred-interests-1">Animals/Going to Zoo</label>
     </div>
     <div>
-        <input type="checkbox" id="option22" name="interests" value="Anime"> Anime
+        <input type="checkbox" id="preferred-interests-2" name="preferred-interests" value="Anime">
+        <label for="preferred-interests-2">Anime</label>
     </div>
     <div>
-        <input type="checkbox" id="option23" name="interests" value="Playing board games"> Playing board games
+        <input type="checkbox" id="preferred-interests-3" name="preferred-interests" value="Playing board games">
+        <label for="preferred-interests-3">Playing board games</label>
     </div>
     <div>
-        <input type="checkbox" id="option24" name="interests" value="Bowling"> Bowling
+        <input type="checkbox" id="preferred-interests-4" name="preferred-interests" value="Bowling">
+        <label for="preferred-interests-4">Bowling</label>
     </div>
     <div>
-        <input type="checkbox" id="option25" name="interests" value="Cooking/Baking"> Cooking/Baking
+        <input type="checkbox" id="preferred-interests-5" name="preferred-interests" value="Cooking/Baking">
+        <label for="preferred-interests-5">Cooking/Baking</label>
     </div>
     <div>
-        <input type="checkbox" id="option26" name="interests" value="Dancing"> Dancing
+        <input type="checkbox" id="preferred-interests-6" name="preferred-interests" value="Dancing">
+        <label for="preferred-interests-6">Dancing</label>
     </div>
     <div>
-        <input type="checkbox" id="option27" name="interests" value="Fishing"> Fishing
+        <input type="checkbox" id="preferred-interests-7" name="preferred-interests" value="Fishing">
+        <label for="preferred-interests-7">Fishing</label>
     </div>
     <div>
-        <input type="checkbox" id="option28" name="interests" value="Fashion/Makeup/Style"> Fashion/Makeup/Style
+        <input type="checkbox" id="preferred-interests-8" name="preferred-interests" value="Fashion/Makeup/Style">
+        <label for="preferred-interests-8">Fashion/Makeup/Style</label>
     </div>
     <div>
-        <input type="checkbox" id="option29" name="interests" value="Going to the movies"> Going to the movies
+        <input type="checkbox" id="preferred-interests-9" name="preferred-interests" value="Going to the movies">
+        <label for="preferred-interests-9">Going to the movies</label>
     </div>
     <div>
-        <input type="checkbox" id="option30" name="interests" value="Hanging with friends"> Hanging with friends
+        <input type="checkbox" id="preferred-interests-10" name="preferred-interests" value="Hanging with friends">
+        <label for="preferred-interests-10">Hanging with friends</label>
     </div>
     <div>
-        <input type="checkbox" id="option31" name="interests" value="Reading/Visiting the Library"> Reading/Visiting the Library
+        <input type="checkbox" id="preferred-interests-11" name="preferred-interests" value="Reading/Visiting the Library">
+        <label for="preferred-interests-11">Reading/Visiting the Library</label>
     </div>
     <div>
-        <input type="checkbox" id="option32" name="interests" value="Visiting museums"> Visiting museums
+        <input type="checkbox" id="preferred-interests-12" name="preferred-interests" value="Visiting museums">
+        <label for="preferred-interests-12">Visiting museums</label>
     </div>
     <div>
-        <input type="checkbox" id="option33" name="interests" value="Listening to music/Attending concerts"> Listening to music/Attending concerts
+        <input type="checkbox" id="preferred-interests-13" name="preferred-interests" value="Listening to music/Attending concerts">
+        <label for="preferred-interests-13">Listening to music/Attending concerts</label>
     </div>
     <div>
-        <input type="checkbox" id="option34" name "interests" value="Art: Painting, drawing, theater, etc"> Art: Painting, drawing, theater, etc
+        <input type="checkbox" id="preferred-interests-14" name="preferred-interests" value="Art: Painting, drawing, theater, etc">
+        <label for="preferred-interests-14">Art: Painting, drawing, theater, etc</label>
     </div>
     <div>
-        <input type="checkbox" id="option35" name="interests" value="Photography"> Photography
+        <input type="checkbox" id="preferred-interests-15" name="preferred-interests" value="Photography">
+        <label for="preferred-interests-15">Photography</label>
     </div>
     <div>
-        <input type="checkbox" id="option36" name="interests" value="Exercise: Running, walking, going to park"> Exercise: Running, walking, going to park
+        <input type="checkbox" id="preferred-interests-16" name="preferred-interests" value="Exercise: Running, walking, going to park">
+        <label for="preferred-interests-16">Exercise: Running, walking, going to park</label>
     </div>
     <div>
-        <input type="checkbox" id="option37" name="interests" value="Science"> Science
+        <input type="checkbox" id="preferred-interests-17" name="preferred-interests" value="Science">
+        <label for="preferred-interests-17">Science</label>
     </div>
     <div>
-        <input type="checkbox" id="option38" name="interests" value="Shopping"> Shopping
+        <input type="checkbox" id="preferred-interests-18" name="preferred-interests" value="Shopping">
+        <label for="preferred-interests-18">Shopping</label>
     </div>
     <div>
-        <input type="checkbox" id="option39" name="interests" value="Singing"> Singing
+        <input type="checkbox" id="preferred-interests-19" name="preferred-interests" value="Singing">
+        <label for="preferred-interests-19">Singing</label>
     </div>
     <div>
-        <input type="checkbox" id="option40" name="interests" value="Sports"> Sports
+        <input type="checkbox" id="preferred-interests-20" name="preferred-interests" value="Sports">
+        <label for="preferred-interests-20">Sports</label>
     </div>
     <div>
-        <input type="checkbox" id="option41" name="interests" value="Social media"> Social media
+        <input type="checkbox" id="preferred-interests-21" name="preferred-interests" value="Social media">
+        <label for="preferred-interests-21">Social media</label>
     </div>
     <div>
-        <input type="checkbox" id="option42" name="interests" value="Technology/Video games"> Technology/Video games
+        <input type="checkbox" id="preferred-interests-22" name="preferred-interests" value="Technology/Video games">
+        <label for="preferred-interests-22">Technology/Video games</label>
     </div>
     <div>
-        <input type="checkbox" id="option43" name="interests" value="Volunteering"> Volunteering
+        <input type="checkbox" id="preferred-interests-23" name="preferred-interests" value="Volunteering">
+        <label for="preferred-interests-23">Volunteering</label>
     </div>
     <div>
-        <input type="checkbox" id="option44" name="interests" value="Watching TV"> Watching TV
+        <input type="checkbox" id="preferred-interests-24" name="preferred-interests" value="Watching TV">
+        <label for="preferred-interests-24">Watching TV</label>
     </div>
     <div>
-        <input type="checkbox" id="option45" name="interests" value="Writing"> Writing
+        <input type="checkbox" id="preferred-interests-25" name="preferred-interests" value="Writing">
+        <label for="preferred-interests-25">Writing</label>
     </div>
     <div>
-        <input type="checkbox" id="option46" name="interests" value="Going out to eat"> Going out to eat
+        <input type="checkbox" id="preferred-interests-26" name="preferred-interests" value="Going out to eat">
+        <label for="preferred-interests-26">Going out to eat</label>
     </div>
-    <br> 
 
     <br>
-    <label> Select up to 5 qualities that you feel best describe you </label>
+    <label> Select up to 5 qualities from the following list that are important for your mentee to have. </label>
     <div>
-        <input type="checkbox" id="option47" name="personality" value="Have a sense of humor/Funny"> Have a sense of humor/Funny
+        <input type="checkbox" id="preferred-qualities-1" name="preferred-qualities" value="Funny">
+        <label for="preferred-qualities-1">Funny</label>
     </div>
     <div>
-        <input type="checkbox" id="option48" name="personality" value="Serious thinker"> Serious thinker
+        <input type="checkbox" id="preferred-qualities-2" name="preferred-qualities" value="Serious and contemplative">
+        <label for="preferred-qualities-2">Serious and contemplative</label>
     </div>
     <div>
-        <input type="checkbox" id="option49" name="personality" value="Ambitious"> Ambitious
+        <input type="checkbox" id="preferred-qualities-3" name="preferred-qualities" value="Ambitious">
+        <label for="preferred-qualities-3">Ambitious</label>
     </div>
     <div>
-        <input type="checkbox" id="option50" name="personality" value="Scientific"> Scientific
+        <input type="checkbox" id="preferred-qualities-4" name="preferred-qualities" value="Scientific">
+        <label for="preferred-qualities-4">Scientific</label>
     </div>
     <div>
-        <input type="checkbox" id="option51" name="personality" value="Likes to dream"> Likes to dream
+        <input type="checkbox" id="preferred-qualities-5" name="preferred-qualities" value="Courageous">
+        <label for="preferred-qualities-5">Courageous</label>
     </div>
     <div>
-        <input type="checkbox" id="option52" name="personality" value="Courageous"> Courageous
+        <input type="checkbox" id="preferred-qualities-6" name="preferred-qualities" value="Relaxed">
+        <label for="preferred-qualities-6">Relaxed</label>
     </div>
     <div>
-        <input type="checkbox" id="option53" name="personality" value="Relaxed"> Relaxed
+        <input type="checkbox" id="preferred-qualities-7" name="preferred-qualities" value="Supportive">
+        <label for="preferred-qualities-7">Supportive</label>
     </div>
     <div>
-        <input type="checkbox" id="option54" name="personality" value="Supportive"> Supportive
+        <input type="checkbox" id="preferred-qualities-8" name="preferred-qualities" value="Outgoing">
+        <label for="preferred-qualities-8">Outgoing</label>
     </div>
     <div>
-        <input type="checkbox" id="option55" name="personality" value="Great public speaker/outgoing"> Great public speaker/outgoing
+        <input type="checkbox" id="preferred-qualities-9" name="preferred-qualities" value="Confident">
+        <label for="preferred-qualities-9">Confident</label>
     </div>
     <div>
-        <input type="checkbox" id="option56" name="personality" value="Confident"> Confident
+        <input type="checkbox" id="preferred-qualities-10" name="preferred-qualities" value="Social">
+        <label for="preferred-qualities-10">Social</label>
     </div>
     <div>
-        <input type="checkbox" id="option57" name="personality" value="Social"> Social
+        <input type="checkbox" id="preferred-qualities-11" name="preferred-qualities" value="Introverted/Shy">
+        <label for="preferred-qualities-11">Introverted/Shy</label>
     </div>
     <div>
-        <input type="checkbox" id="option58" name="personality" value="Introverted/Shy"> Introverted/Shy
+        <input type="checkbox" id="preferred-qualities-12" name="preferred-qualities" value="Experienced (in career or field of study)">
+        <label for="preferred-qualities-12">Experienced (in career or field of study)</label>
     </div>
     <div>
-        <input type="checkbox" id="option59" name="personality" value="Experience (In career or field of study)"> Experience (In career or field of study)
+        <input type="checkbox" id="preferred-qualities-13" name="preferred-qualities" value="Studious">
+        <label for="preferred-qualities-13">Studious</label>
     </div>
-    <div>
-        <input type="checkbox" id="option60" name="personality" value="Studious"> Studious
-    </div>
-    <br> 
 
-    <br>
+    <h2> Rank your preferences </h2> 
+
     <label> What is the most important factor for you when it comes to a mentee? </label>
-    <select id="question" name="question">
-        <option value="" disabled selected>Select a question</option>
-        <option value="mentoringPreference">How do you want your mentoring relationship to primarily take place?</option>
-        <option value="zipCode">Enter your Zip code</option>
-        <option value="state">What state do you reside in?</option>
-        <option value="county">What county do you reside in?</option>
-        <option value="travelDistance">How far are you willing to travel (if in person or hybrid)?</option>
-        <option value="availableTimes">When are you available to meet with your mentee?</option>
-        <option value="primaryLanguage">What is your primary language?</option>
-        <option value="otherLanguages">What languages other than English do you speak fluently?</option>
-        <option value="dob">Enter your Date of Birth</option>
-        <option value="gender">Select your gender</option>
-        <option value="preferredGender">Select your preferred gender for your mentees</option>
-        <option value="raceEthnicity">Select your race/ethnicity</option>
-        <option value="preferredRaceEthnicity">Select your preferred race/ethnicity for your mentee</option>
-        <option value="educationLevel">Up to what education level do you feel comfortable supporting a mentee?</option>
-        <option value="disability">Do you have a disability?</option>
-        <option value="disabilityDescription">Tell us about your disability.</option>
-        <option value="similarDisability">Do you want a mentee with a similar disability to yours?</option>
-        <option value="lgbtqia">Do you identify as a member of the LGBTQIA+ Community?</option>
-        <option value="lgbtqiaMentee">Do you want an LGBTQIA+ mentee?</option>
-        <option value="religion">Do you want to disclose religion? (optional)</option>
-        <option value="similarReligion">Do you want someone with a similar religion to yours? (if previous question was answered)</option>
-        <option value="ageRange">What age range do you want your mentee to be?</option>
-        <option value="mentoringGoals">What mentee goals for this mentorship relationship do you feel comfortable supporting?</option>
-        <option value="areasOfGrowth">What are some areas of growth you can support your mentee through?</option>
-        <option value="hobbiesInterests">Select 5 or more hobbies and interests that appeal to you and you would be willing to share with the mentee.</option>
-        <option value="qualities">Select up to 5 qualities that you feel best describe you.</option>
+    <br>
+    <select id="priority-1" name="priority-1">
+        <option value="" disabled selected>Select a preference</option>
+        <option value="preferredGender">Preferred Gender</option>
+        <option value="preferredRace">Preferred Race</option>
+        <option value="travelDistance">Preferred Travel Distance</option>
+        <option value="preferredSetting">Preferred Setting</option>
+        <option value="preferredTime">Preferred Time</option>
+        <option value="preferredDisability">Preferred Disability</option>
+        <option value="preferredLGBTQIAStatus">Preferred LGBTQIA Status</option>
+        <option value="preferredReligion">Preferred Religion</option>
+        <option value="preferredMinimumAge">Preferred Minimum Age</option>
+        <option value="preferredMaximumAge">Preferred Maximum Age</option>
+        <option value="preferredGoals">Preferred Goals</option>
+        <option value="preferredGrowthAreas">Preferred Growth Areas</option>
+        <option value="preferredInterests">Preferred Interests</option>
+        <option value="preferredQualities">Preferred Qualities</option>
     </select>
-    <br> 
+    <br>
 
     <br>
     <label> What is the second most important factor for you when it comes to a mentee? </label>
-    <select id="question" name="question">
-        <option value="" disabled selected>Select a question</option>
-        <option value="mentoringPreference">How do you want your mentoring relationship to primarily take place?</option>
-        <option value="zipCode">Enter your Zip code</option>
-        <option value="state">What state do you reside in?</option>
-        <option value="county">What county do you reside in?</option>
-        <option value="travelDistance">How far are you willing to travel (if in person or hybrid)?</option>
-        <option value="availableTimes">When are you available to meet with your mentee?</option>
-        <option value="primaryLanguage">What is your primary language?</option>
-        <option value="otherLanguages">What languages other than English do you speak fluently?</option>
-        <option value="dob">Enter your Date of Birth</option>
-        <option value="gender">Select your gender</option>
-        <option value="preferredGender">Select your preferred gender for your mentees</option>
-        <option value="raceEthnicity">Select your race/ethnicity</option>
-        <option value="preferredRaceEthnicity">Select your preferred race/ethnicity for your mentee</option>
-        <option value="educationLevel">Up to what education level do you feel comfortable supporting a mentee?</option>
-        <option value="disability">Do you have a disability?</option>
-        <option value="disabilityDescription">Tell us about your disability.</option>
-        <option value="similarDisability">Do you want a mentee with a similar disability to yours?</option>
-        <option value="lgbtqia">Do you identify as a member of the LGBTQIA+ Community?</option>
-        <option value="lgbtqiaMentee">Do you want an LGBTQIA+ mentee?</option>
-        <option value="religion">Do you want to disclose religion? (optional)</option>
-        <option value="similarReligion">Do you want someone with a similar religion to yours? (if previous question was answered)</option>
-        <option value="ageRange">What age range do you want your mentee to be?</option>
-        <option value="mentoringGoals">What mentee goals for this mentorship relationship do you feel comfortable supporting?</option>
-        <option value="areasOfGrowth">What are some areas of growth you can support your mentee through?</option>
-        <option value="hobbiesInterests">Select 5 or more hobbies and interests that appeal to you and you would be willing to share with the mentee.</option>
-        <option value="qualities">Select up to 5 qualities that you feel best describe you.</option>
+    <br>
+    <select id="priority-2" name="priority-2">
+        <option value="" disabled selected>Select a preference</option>
+        <option value="preferredGender">Preferred Gender</option>
+        <option value="preferredRace">Preferred Race</option>
+        <option value="travelDistance">Preferred Travel Distance</option>
+        <option value="preferredSetting">Preferred Setting</option>
+        <option value="preferredTime">Preferred Time</option>
+        <option value="preferredDisability">Preferred Disability</option>
+        <option value="preferredLGBTQIAStatus">Preferred LGBTQIA Status</option>
+        <option value="preferredReligion">Preferred Religion</option>
+        <option value="preferredMinimumAge">Preferred Minimum Age</option>
+        <option value="preferredMaximumAge">Preferred Maximum Age</option>
+        <option value="preferredGoals">Preferred Goals</option>
+        <option value="preferredGrowthAreas">Preferred Growth Areas</option>
+        <option value="preferredInterests">Preferred Interests</option>
+        <option value="preferredQualities">Preferred Qualities</option>
     </select>
     <br> 
 
     <br>
     <label> What is the third most important factor for you when it comes to a mentee?</label>
-    <select id="question" name="question">
-        <option value="" disabled selected>Select a question</option>
-        <option value="mentoringPreference">How do you want your mentoring relationship to primarily take place?</option>
-        <option value="zipCode">Enter your Zip code</option>
-        <option value="state">What state do you reside in?</option>
-        <option value="county">What county do you reside in?</option>
-        <option value="travelDistance">How far are you willing to travel (if in person or hybrid)?</option>
-        <option value="availableTimes">When are you available to meet with your mentee?</option>
-        <option value="primaryLanguage">What is your primary language?</option>
-        <option value="otherLanguages">What languages other than English do you speak fluently?</option>
-        <option value="dob">Enter your Date of Birth</option>
-        <option value="gender">Select your gender</option>
-        <option value="preferredGender">Select your preferred gender for your mentees</option>
-        <option value="raceEthnicity">Select your race/ethnicity</option>
-        <option value="preferredRaceEthnicity">Select your preferred race/ethnicity for your mentee</option>
-        <option value="educationLevel">Up to what education level do you feel comfortable supporting a mentee?</option>
-        <option value="disability">Do you have a disability?</option>
-        <option value="disabilityDescription">Tell us about your disability.</option>
-        <option value="similarDisability">Do you want a mentee with a similar disability to yours?</option>
-        <option value="lgbtqia">Do you identify as a member of the LGBTQIA+ Community?</option>
-        <option value="lgbtqiaMentee">Do you want an LGBTQIA+ mentee?</option>
-        <option value="religion">Do you want to disclose religion? (optional)</option>
-        <option value="similarReligion">Do you want someone with a similar religion to yours? (if previous question was answered)</option>
-        <option value="ageRange">What age range do you want your mentee to be?</option>
-        <option value="mentoringGoals">What mentee goals for this mentorship relationship do you feel comfortable supporting?</option>
-        <option value="areasOfGrowth">What are some areas of growth you can support your mentee through?</option>
-        <option value="hobbiesInterests">Select 5 or more hobbies and interests that appeal to you and you would be willing to share with the mentee.</option>
-        <option value="qualities">Select up to 5 qualities that you feel best describe you.</option>
+    <br>
+    <select id="priority-3" name="priority-3">
+        <option value="" disabled selected>Select a preference</option>
+        <option value="preferredGender">Preferred Gender</option>
+        <option value="preferredRace">Preferred Race</option>
+        <option value="travelDistance">Preferred Travel Distance</option>
+        <option value="preferredSetting">Preferred Setting</option>
+        <option value="preferredTime">Preferred Time</option>
+        <option value="preferredDisability">Preferred Disability</option>
+        <option value="preferredLGBTQIAStatus">Preferred LGBTQIA Status</option>
+        <option value="preferredReligion">Preferred Religion</option>
+        <option value="preferredMinimumAge">Preferred Minimum Age</option>
+        <option value="preferredMaximumAge">Preferred Maximum Age</option>
+        <option value="preferredGoals">Preferred Goals</option>
+        <option value="preferredGrowthAreas">Preferred Growth Areas</option>
+        <option value="preferredInterests">Preferred Interests</option>
+        <option value="preferredQualities">Preferred Qualities</option>
     </select>
     <br>
   </form>
