@@ -42,7 +42,7 @@
     [radio your-primary-language use_label_element "English" "Spanish" "Portuguese" "Cantonese" "Mandarin" "French" "Haitian Creole" "American Sign Language" "Other"]
 
 <label> What languages other than English do you speak fluently? </label>
-    [checkbox* your-additional-languages id:additional-languages "Spanish" "Portuguese" "Cantonese" "Mandarin" "French" "Haitian Creole" "American Sign Language" "Other"]
+    [checkbox your-additional-languages id:additional-languages "Spanish" "Portuguese" "Cantonese" "Mandarin" "French" "Haitian Creole" "American Sign Language" "Other"]
 
 <label> Do you want to disclose religion? </label>
     [radio your-religion use_label_element "Christianity" "Judaism" "Islam" "Hinduism" "Jainism" "Sikhism" "Buddhism" "Shintoism" "Other" "I do not wish to disclose"]
@@ -65,10 +65,10 @@
     [checkbox* preferred-setting "In Person" "Virtual" "Hybrid"] 
 
 <label> When are you available to meet with your mentee? </label> 
-    [checkbox* preferred-time "Weekday afternoons" "Weekday evenings" "Weekend mornings" "Weekned afternoons" "Weekend evenings"]
+    [checkbox* preferred-time "Weekday afternoons" "Weekday evenings" "Weekend mornings" "Weekend afternoons" "Weekend evenings"]
 
 <label> Up to what education level do you feel comfortable supporting a mentee? </label> 
-    [checkbox preferred-education-plans "High school" "College" "Trade school" "Working"]
+    [checkbox* preferred-education-plans "High school" "College" "Trade school" "Working"]
 
 <label> Do you want a mentee with a similar disability to yours? </label> 
     [radio preferred-disability "Yes" "No" "Doesn't Matter"]
@@ -91,10 +91,10 @@
     [checkbox* preferred-goals "Make a friend" "Have someone help me feel more independent" "Provide me with career and school advice" "Learn a new skill" "Explore the community" "Do fun activities" "Share a hobby" "Have someone to talk to"] 
 
 <label> What are some areas of growth I can support my mentee through? </label> 
-    [checkbox* preferred-growth-areas "Do better in school" "Be a better listener" "Have more confidence" "Gain work skills" "Gain people skills" "Be funnier" "Be more organized" "Learn a skill or hobby" "Get along better with others (including my parents/siblings)" "Feel less anxious about meeting new people or going new places" "Manage my time better" "Get out of my comfort zone" "Learn to make or save money" "Be less self-conscious about myself" "Understand other perspectives better" "Trusting my mentor" "Going to public places" "Showing up to meetings on time" "Be a better listener" "Have more confidence"] 
+    [checkbox* preferred-growth-areas "Do better in school" "Be a better listener" "Have more confidence" "Gain work skills" "Gain people skills" "Be funnier" "Be more organized" "Learn a skill or hobby" "Get along better with others (including my parents/siblings)" "Feel less anxious about meeting new people or going new places" "Manage my time better" "Get out of my comfort zone" "Learn to make or save money" "Be less self-conscious about myself" "Understand other perspectives better" "Trusting my mentor" "Going to public places" "Showing up to meetings on time"] 
 
 <label> Select 5 or more hobbies and interests from the following list that appeal to you and you would be willing to share with the mentee. </label> 
-    [checkbox* preferred-interests "Animals/Going to Zoo" "Anime" "Playing board games" "Bowling" "Cooking/Baking" "Dancing" "Fishing" "Fashion/Makeup/STyle" "Going to the movies" "Hanging with friends" "Reading/Visiting the Library" "Visiting museums" "Listening to music/Attending concerts" "Art:Painting, drawing, theater, etc" "Photography" "Exercise: Running, walking, going to park" "Science" "Shopping" "Singing" "Sports" "Social media" "Technology/Video games" "Volunteering" "Watching TV" "Writing" "Going out to eat"]
+    [checkbox* preferred-interests "Animals/Going to Zoo" "Anime" "Playing board games" "Bowling" "Cooking/Baking" "Dancing" "Fishing" "Fashion/Makeup/STyle" "Going to the movies" "Going out to eat" "Hanging with friends" "Reading/Visiting the Library" "Visiting museums" "Listening to music/Attending concerts" "Art:Painting, drawing, theater, etc" "Photography" "Exercise: Running, walking, going to park" "Science" "Shopping" "Singing" "Sports" "Social media" "Technology/Video games" "Volunteering" "Watching TV" "Writing"]
 
 <label> Select up to 5 qualities from the following list that are important for your mentee to have. </label>
     [checkbox* preferred-qualities "Funny" "Serious thinker" "Ambitious" "Scientific" "Likes to dream" "Courageous" "Relaxed" "Supportive" "Great public speaker/outgoing" "Confident" "Social" "Introverted/Shy" "Experience (In career or field of study)" "Studious"]

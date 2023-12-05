@@ -66,7 +66,7 @@
     [radio your-primary-language id:your-primary-language use_label_element "English" "Spanish" "Portuguese" "Cantonese" "Mandarin" "French" "Haitian Creole" "American Sign Language" "Other"]
 
 <label> What languages other than English do you speak fluently? </label>
-    [checkbox* your-additional-languages id:your-additional-languages  "Spanish" "Portuguese" "Cantonese" "Mandarin" "French" "Haitian Creole" "American Sign Language" "Other"]
+    [checkbox your-additional-languages id:your-additional-languages  "Spanish" "Portuguese" "Cantonese" "Mandarin" "French" "Haitian Creole" "American Sign Language" "Other"]
 
 <label> Do you want to disclose religion? </label>
     [radio your-religion id:your-religion use_label_element "Christianity" "Judaism" "Islam" "Hinduism" "Jainism" "Sikhism" "Buddhism" "Shintoism" "Other" "I do not wish to disclose"]
@@ -112,7 +112,7 @@
     [checkbox* preferred-goals id:preferred-goals "Make a friend" "Have someone help me feel more independent" "Provide me with career and school advice" "Learn a new skill" "Explore the community" "Do fun activities" "Share a hobby" "Have someone to talk to"]
 
 <label> What is an area I would like to grow or get better at from my mentorship experience? </label>
-    [checkbox* preferred-growth-areas id:preferred-growth-areas "Do better in school" "Be a better listener" "Have more confidence" "Gain work skills" "Gain people skills" "Be funnier" "Be more organized" "Learn a skill or hobby" "Get along better with others (including my parents/siblings)" "Feel less anxious about meeting new people or going new places" "Manage my time better" "Get out of my comfort zone" "Learn to make or save money" "Be less self-conscious about myself" "Understand other perspectives better" "Trusting my mentor" "Going to public places" "Showing up to meetings on time" "Be a better listener" "Have more confidence"]
+    [checkbox* preferred-growth-areas id:preferred-growth-areas "Do better in school" "Be a better listener" "Have more confidence" "Gain work skills" "Gain people skills" "Be funnier" "Be more organized" "Learn a skill or hobby" "Get along better with others (including my parents/siblings)" "Feel less anxious about meeting new people or going new places" "Manage my time better" "Get out of my comfort zone" "Learn to make or save money" "Be less self-conscious about myself" "Understand other perspectives better" "Trusting my mentor" "Going to public places" "Showing up to meetings on time"]
 
 <label> Select up to 5 hobbies and interests from the following list that appeal to you and you would be willing to share with your mentor. </label>
     [checkbox* preferred-interests id:preferred-interests "Animals/Going to Zoo" "Anime" "Playing board games" "Bowling" "Cooking/Baking" "Dancing" "Fishing" "Fashion/Makeup/Style" "Going to the movies" "Hanging with friends" "Reading/Visiting the Library" "Visiting museums" "Listening to music/Attending concerts" "Art: Painting, drawing, theater, etc" "Photography" "Exercise: Running, walking, going to park" "Science" "Shopping" "Singing" "Sports" "Social media" "Technology/Video games" "Volunteering" "Watching TV" "Writing" "Going out to eat"]
