@@ -13,7 +13,8 @@ To use Requests, follow these steps:
 
 2. Run the following command in your terminal 
 ```bash
-pip install requests 
+pip install requests
+```
 
 
 # Geopy
@@ -30,5 +31,6 @@ To use Geopy in your Python project, follow these steps to install the required 
 
 ```bash
 pip install geopy
+```
 
 
