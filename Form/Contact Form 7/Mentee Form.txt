@@ -1,0 +1,134 @@
+<h1> Mentee Form </h1> 
+
+<h2> Personal Questions </h2>
+
+<label> First name:
+    [text* your-first-name id:your-first-name akismet:author] </label>
+
+<label> Last name:
+    [text* your-last-name id:your-last-name akismet:author] </label> 
+
+<label> Phone number:
+    [tel* your-phone-number id:your-phone-number] </label>
+
+<label> Email:
+    [email* your-email id:your-email akismet:author_email autocomplete:email] </label>
+
+<label> Parent/Guardian's first name: 
+    [text* guardian-first-name id:guardian-first-name] </label> 
+
+<label> Parent/Guardian's last name:
+    [text* guardian-last-name id:guardian-last-name] </label> 
+
+<label> Parent/Guardian's phone number: 
+    [text* guardian-phone-number id:guardian-phone-number] </label> 
+
+<label> Parent/Guardian's email: 
+    [email* your-email id:your-email akismet:author_email autocomplete:email] </label>
+
+<label> Select your gender. </label>
+    [radio your-gender id:your-gender use_label_element "Man" "Woman" "Nonbinary"]
+
+<label> What are your pronouns? </label>
+    [checkbox* your-pronouns if:your-pronouns use_label_element "He" "She" "They" "Other"]
+
+<label> Do you identify as a member of the LGBTQIA+ Community? </label>
+    [radio your-LGBTQIA-status id:your-LGBTQIA-status Luse_label_element "Yes" "No"]
+
+<label> Select your race/ethnicity. </label>
+    [checkbox* your-race id:your-race use_label_element "Black" "White" "Hispanic/Latinx" "Asian" "Middle Eastern" "American Indian"]
+
+<label> Enter your date of birth: </label>
+    [date* your-dob id:your-dob min:1900-01-01 max:today]
+
+<label> Enter your age: </label>
+    [number* your-age id:your-age] 
+
+<label> What school/program do you attend?
+    [text* your-school id:your-school] </label>
+
+<label> Household Income: </label>
+    [select* your-income id:your-income include_blank "Under $10,000" "$10,000 - $24,999" "$25,000 - $49,999" "$50,000 - $74,999" "$75,000 - $99,999" "$100,000 - $124,999" "$125,000 - $149,999" "Over $150,000"]
+
+<label> Do you have an IEP or a 504 plan? </label>
+    [radio your-plan id:your-plan use_label_element "IEP" "504"]
+
+<label> What is the highest level of education you have/wish to go to? </label>
+    [radio your-education-plans id:your-education-plans use_label_element "High School" "College" "Trade School" "Working" "Not a Student"]
+
+<label> Enter your zip code: </label>
+    [number* your-zip-code id:your-zip-code]
+
+<label> Select the category that best describes your disability. </label>
+    [radio your-disability id:your-disability "Mental Health" "Developmental Disabilities" "Intellectual Disabilities" "Learning Disabilities" "Communication Disabilities" "Physical Disabilities" "Sensory Disabilities" "No Disability"]
+
+<label> What is your primary language? </label>
+    [radio your-primary-language id:your-primary-language use_label_element "English" "Spanish" "Portuguese" "Cantonese" "Mandarin" "French" "Haitian Creole" "American Sign Language" "Other"]
+
+<label> What languages other than English do you speak fluently? </label>
+    [checkbox your-additional-languages id:your-additional-languages  "Spanish" "Portuguese" "Cantonese" "Mandarin" "French" "Haitian Creole" "American Sign Language" "Other"]
+
+<label> Do you want to disclose religion? </label>
+    [radio your-religion id:your-religion use_label_element "Christianity" "Judaism" "Islam" "Hinduism" "Jainism" "Sikhism" "Buddhism" "Shintoism" "Other" "I do not wish to disclose"]
+
+<label> Select up to 5 qualities that you feel best describe you </label> 
+    [checkbox* your-qualities id:your-qualities "Funny" "Serious thinker" "Ambitious" "Scientific" "Likes to dream" "Courageous" "Relaxed" "Supportive" "Great public speaker/outgoing" "Confident" "Social" "Introverted/Shy" "Experience (In career or field of study)" "Studious"] 
+
+<h2> For your mentor </h2>
+
+<label> Select your preferred gender for your mentor. </label> 
+    [checkbox* preferred-gender id:preferred-gender "Man" "Woman" "Nonbinary"] 
+
+<label> Select your preferred race/ethnicity for your mentor. </label> 
+    [checkbox* preferred-race id:preferred-race "Black" "White" "Hispanic/Latinx" "Asian" "Middle Eastern" "American Indian"] 
+
+<label> How far are you willing to travel (in miles)? 
+    [number* preferred-travel-distance id:preferred-travel-distance min:0 step:5] </label>
+
+<label> How do you want your mentoring relationship to primarily take place? </label> 
+    [checkbox* preferred-setting id:preferred-setting "In Person" "Virtual" "Hybrid"]
+
+<label> When are you available to meet with your mentor? </label> 
+    [checkbox* preferred-time id:preferred-time "Weekday afternoons" "Weekday evenings" "Weekend mornings" "Weekend afternoons" "Weekend evenings"] 
+
+<label> Do you want a mentor with a similar disability to yours? </label> 
+    [radio preferred-disability id:preferred-disability "Yes" "No" "Doesn't matter"] 
+
+<label> Do you want an LGBTQIA+ mentor? </label> 
+    [radio preferred-LGBTQIA-status id:preferred-LGBTQIA-status "Yes" "No" "Doesn't matter"]
+
+<label> Do you want someone with a similar religion to yours? </label> 
+    [radio preferred-religion id:preferred-religion "Yes" "No" "Doesn't matter"] 
+
+<label> What is the minimum age (years old) that you want your mentor to be? </label>
+    [number* preferred-minimum-age id:preferred-minimum-age min:18 max:100 step:1] 
+
+<label> What is the maximum age (years old) that you want your mentor to be? </label> 
+    [number* preferred-maximum-age id:preferred-maximum-age min:18 max:100 step:1]
+  
+<h2> Mentoring Style </h2> 
+
+<label> What are your goals for this mentorship relationship? </label>
+    [checkbox* preferred-goals id:preferred-goals "Make a friend" "Have someone help me feel more independent" "Provide me with career and school advice" "Learn a new skill" "Explore the community" "Do fun activities" "Share a hobby" "Have someone to talk to"]
+
+<label> What is an area I would like to grow or get better at from my mentorship experience? </label>
+    [checkbox* preferred-growth-areas id:preferred-growth-areas "Do better in school" "Be a better listener" "Have more confidence" "Gain work skills" "Gain people skills" "Be funnier" "Be more organized" "Learn a skill or hobby" "Get along better with others (including my parents/siblings)" "Feel less anxious about meeting new people or going new places" "Manage my time better" "Get out of my comfort zone" "Learn to make or save money" "Be less self-conscious about myself" "Understand other perspectives better" "Trusting my mentor" "Going to public places" "Showing up to meetings on time"]
+
+<label> Select up to 5 hobbies and interests from the following list that appeal to you and you would be willing to share with your mentor. </label>
+    [checkbox* preferred-interests id:preferred-interests "Animals/Going to Zoo" "Anime" "Playing board games" "Bowling" "Cooking/Baking" "Dancing" "Fishing" "Fashion/Makeup/Style" "Going to the movies" "Hanging with friends" "Reading/Visiting the Library" "Visiting museums" "Listening to music/Attending concerts" "Art: Painting, drawing, theater, etc" "Photography" "Exercise: Running, walking, going to park" "Science" "Shopping" "Singing" "Sports" "Social media" "Technology/Video games" "Volunteering" "Watching TV" "Writing" "Going out to eat"]
+
+<label> Select up to 5 qualities from the following list that are important for your mentor to have. </label>
+    [checkbox* preferred-qualities id:preferred-qualities "Funny" "Serious thinker" "Ambitious" "Scientific" "Likes to dream" "Courageous" "Relaxed" "Supportive" "Great public speaker/outgoing" "Confident" "Social" "Introverted/Shy" "Experience (In career or field of study)" "Studious"]
+
+<h2> Rank your preferences </h2> 
+
+<label> What is the most important factor for you when it comes to a mentor? </label>
+    [select* priority-1 id:priority-1 include_blank "Preferred Gender" "Preferred Race" "Preferred Travel Distance" "Preferred Setting" "Preferred Time" "Preferred Disability" "Preferred LGBTQIA Status" "Preferred Religion" "Preferred Minimum Age" "Preferred Maximum Age" "Preferred Goals" "Preferred Growth Areas" "Preferred Interests" "Preferred Qualities"]
+
+<label> What is the second most important factor for you when it comes to a mentor? </label>
+    [select* priority-2 id:priority-2 include_blank "Preferred Gender" "Preferred Race" "Preferred Travel Distance" "Preferred Setting" "Preferred Time" "Preferred Disability" "Preferred LGBTQIA Status" "Preferred Religion" "Preferred Minimum Age" "Preferred Maximum Age" "Preferred Goals" "Preferred Growth Areas" "Preferred Interests" "Preferred Qualities"]
+
+<label> What is the third most important factor for you when it comes to a mentor? </label>
+    [select* priority-3 id:priority-3 include_blank "Preferred Gender" "Preferred Race" "Preferred Travel Distance" "Preferred Setting" "Preferred Time" "Preferred Disability" "Preferred LGBTQIA Status" "Preferred Religion" "Preferred Minimum Age" "Preferred Maximum Age" "Preferred Goals" "Preferred Growth Areas" "Preferred Interests" "Preferred Qualities"]
+
+[submit "Submit"]
