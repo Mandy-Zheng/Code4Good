@@ -3,7 +3,7 @@
 
 # Requests 
 
-Requests is a Python library that allows users to send HTTP requests to specific websites. For our matching algorithm, we used this Python library to send an HTTP request to a website that contains zip code data for zip codes in the United States. 
+Requests is a Python library that allows users to send and handle HTTP requests to specific websites. Our matching algorithm uses this Python library to send an HTTP request to a website containing zip code data for the United States. This process allows it to retrieve relevant zip code information, specifically latitude and longitude, for distance calculations performed by another Python library called Geopy.
 
 ## Installation 
 
@@ -11,7 +11,7 @@ To use Requests, follow these steps:
 
 1. Make sure you have Python and pip installed on your system. You can download them from the official Python website: [Python Downloads](https://www.python.org/downloads/)
 
-2. Run the following command in your terminal 
+2. Run the following command in your terminal: 
 ```bash
 pip install requests
 ```
@@ -19,15 +19,15 @@ pip install requests
 
 # Geopy
 
-Geopy is a Python library that provides easy access to geographical information. It allows you to perform geocoding (finding the coordinates of addresses) and distance calculations. For this matching algorithm, we use it to calculate the distance (in miles) between zip codes based on their latitudes and longtidues.
+Geopy is a Python library that provides easy access to geographical information. This Python library allows you to perform geocoding (finding the coordinates of addresses) and distance calculations. Our matching algorithm uses it to calculate the distance (in miles) between zip codes based on their latitudes and longtidues.
 
 ## Installation
 
-To use Geopy in your Python project, follow these steps to install the required packages.
+To use Geopy, follow these steps to install the required packages.
 
 1. Make sure you have Python and pip installed on your system. You can download them from the official Python website: [Python Downloads](https://www.python.org/downloads/)
 
-2. Open your terminal or command prompt and run the following commands to install the necessary packages:
+2. Run the following command in your terminal:
 
 ```bash
 pip install geopy
